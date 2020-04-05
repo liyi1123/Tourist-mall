@@ -1,0 +1,48 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>热门主题管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <#NameCon id="condition" name="名称" />
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="Theme.search()" id="btnSearch"/>
+                            </div>
+
+                           <!--
+                            $("condition").keypress(function(e){
+	                           if(e.keyCode==13){
+		                        $("btnSearch").click();
+	                                             }
+                                  });
+
+                            -->
+
+                        </div>
+                        <div class="hidden-xs" id="ThemeTableToolbar" role="group">
+                            @if(shiro.hasPermission("/theme/add")){
+                                <#button name="添加" icon="fa-plus" clickFun="Theme.openAddTheme()"/>
+                            @}
+                            @if(shiro.hasPermission("/theme/update")){
+                                <#button name="修改" icon="fa-edit" clickFun="Theme.openThemeDetail()" space="true"/>
+                            @}
+                            @if(shiro.hasPermission("/theme/delete")){
+                                <#button name="删除" icon="fa-remove" clickFun="Theme.delete()" space="true"/>
+                            @}
+                        </div>
+                        <#table id="ThemeTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/travel/theme.js"></script>
+@}

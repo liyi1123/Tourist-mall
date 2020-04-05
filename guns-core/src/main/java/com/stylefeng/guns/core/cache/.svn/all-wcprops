@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache
+END
+ILoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache/ILoader.java
+END
+EhcacheFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache/EhcacheFactory.java
+END
+BaseCacheFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache/BaseCacheFactory.java
+END
+ICache.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache/ICache.java
+END
+CacheKit.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/cache/CacheKit.java
+END

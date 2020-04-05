@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Travel - 主页</title>
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="${ctxPath}/static/css/init.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/layui/layui.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/travelStyle.css" rel="stylesheet">
+
+</head>
+<style>
+    .a1{
+        border: 1px dashed red;
+    }
+</style>
+
+<div id="wrapper">
+
+    <body>
+    <div class="allPage">
+
+        <!-- 头部边栏开始 -->
+        @include("/common/t_Header.html"){}
+
+        <!--身体部分开始-->
+        @include("/travel/rentCar/t_rentCar_list.html"){}
+
+        <!-- 底部边栏开始-->
+        @include("/common/t_Footer.html"){}
+
+    </div>
+    </body>
+
+
+</div>
+
+<script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+<script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="${ctxPath}/static/css/plugins/layui/layui.js"></script>
+<script src="${ctxPath}/static/js/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function (){
+        $(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",});
+    });
+    layui.use(['laypage','layer'], function (){
+        var laypage = layui.laypage, layer = layui.layer;
+        laypage.render({
+            elem: 'demo7',
+            count: 100,
+            layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+            jump: function (obj){
+                //console.log(obj);
+            }
+        });
+    });
+</script>
+</html>

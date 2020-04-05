@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service
+END
+IRelationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IRelationService.java
+END
+IOperationLogService.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IOperationLogService.java
+END
+IMenuService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IMenuService.java
+END
+IDeptService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IDeptService.java
+END
+IDictService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IDictService.java
+END
+IRoleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IRoleService.java
+END
+INoticeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/INoticeService.java
+END
+ILoginLogService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/ILoginLogService.java
+END
+IUserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IUserService.java
+END

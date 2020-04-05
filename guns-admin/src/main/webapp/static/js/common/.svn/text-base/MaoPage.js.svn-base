@@ -1,0 +1,71 @@
+/** linlng.Mao
+ *封装的layPage
+ * 前提条件,需要先一次导入jQuery,layui
+ *
+ */
+
+function MaoPage(op){
+    this._init(op);
+};
+MaoPage.prototype = {
+    _init : function (options){
+        this.inputId = options.inputId;     //input = hidden的ID
+        this.id = options.id;               //layPage 的容器标签ID
+        this.theme = options.theme;         //可传入颜色 #FF5722
+        this.url = options.url;             //需要访问的url前缀 只加自己前面的`/`
+        this.param = {};                    //传入存放额外查询条件的ID,input里自定义属性的名字,顺序与Controller参数顺序保持一直
+        this.paramUrl = {};
+
+    },
+    setParam : function (arr){
+        var me = this;
+        if(arr instanceof Array){
+            if(arr.length > 0){
+                me.param = arr;
+            }else {
+                throw new SyntaxError("setParam的参数时空!");
+            }
+        }
+        return this;
+    },
+    setParamUrl : function (){
+        this.clearParamUrl();
+        var me = this,p = me.param;
+        var str = '';
+        if(p.length > 0){
+            for (var i = 0, len = p.length; i < len; i++) {
+                str +='/'+ $('#' + me.inputId).attr(p[i]);
+            }
+            me.paramUrl = str;
+        }
+        return this;
+    },
+    clearParamUrl : function (){
+        this.paramUrl = {};
+    },
+
+    start : function (){
+        var me = this;
+        layui.use(['laypage','layer'], function (){
+            var laypage = layui.laypage, $pageInfo = $("#" + me.inputId);
+
+            laypage.render({
+                elem: me.id,
+                curr: $pageInfo.attr('page-current'),           //当前第页码
+                count: $pageInfo.val(),                         //总共信息条数
+                limit : $pageInfo.attr('page-size'),            //每页显示多少条信息
+                theme: me.theme,
+                layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function (obj,first){
+                    if(!first){
+                        me.setParamUrl(me.param);
+                        var str =Feng.ctxPath + me.url+ '/'+obj.curr + "/" + obj.limit + me.paramUrl;
+                        console.log(str);
+                        window.location.href = str;
+                    }
+                }
+            });
+        });
+    }
+
+};

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping
+END
+DictMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/DictMapper.xml
+END
+RoleMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RoleMapper.xml
+END
+ImagesMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ImagesMapper.xml
+END
+NoticeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/NoticeMapper.xml
+END
+LoginLogMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/LoginLogMapper.xml
+END
+RentCarMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RentCarMapper.xml
+END
+VisaTypeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/VisaTypeMapper.xml
+END
+RelationMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RelationMapper.xml
+END
+OperationLogMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/OperationLogMapper.xml
+END
+ServicesMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ServicesMapper.xml
+END
+MenuMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/MenuMapper.xml
+END
+VisaMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/VisaMapper.xml
+END
+SignInMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/SignInMapper.xml
+END
+DeptMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/DeptMapper.xml
+END
+OrdersMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/OrdersMapper.xml
+END
+BrandMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/BrandMapper.xml
+END
+VisaNationMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/VisaNationMapper.xml
+END
+ProductTypeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ProductTypeMapper.xml
+END
+ThemeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ThemeMapper.xml
+END
+ProductMThemeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ProductMThemeMapper.xml
+END
+UserMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/UserMapper.xml
+END
+AccountMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/AccountMapper.xml
+END
+CarBrandMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/CarBrandMapper.xml
+END
+AddressMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/AddressMapper.xml
+END
+HotelMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/HotelMapper.xml
+END
+RegionMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RegionMapper.xml
+END
+MiddleMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/MiddleMapper.xml
+END
+ScenicSpotMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ScenicSpotMapper.xml
+END

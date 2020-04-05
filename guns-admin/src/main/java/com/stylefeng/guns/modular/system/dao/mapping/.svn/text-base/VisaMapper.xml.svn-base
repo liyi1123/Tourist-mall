@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.VisaMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Visa">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="visaNationId" property="visaNationId" />
+        <result column="visaTypeId" property="visaTypeId" />
+        <result column="price" property="price" />
+        <result column="issueAt" property="issueAt" />
+        <result column="usefulLife" property="usefulLife" />
+        <result column="needTime" property="needTime" />
+        <result column="maxDurationOfStay" property="maxDurationOfStay" />
+        <result column="needDatum" property="needDatum" />
+        <result column="recommend" property="recommend" />
+        <result column="sysUserId" property="sysUserId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, visaNationId, visaTypeId, price, issueAt, usefulLife, needTime, maxDurationOfStay, needDatum, recommend, sysUserId
+    </sql>
+
+    <select id="list" resultType="map">
+        SELECT
+        a.`id`,
+        a.`name`,
+        b.`name` visaNationName,
+        c.`name` visaTypeName,
+        d.`name` regionName,
+        a.`price`,
+        a.`usefulLife`,
+        a.`needTime`,
+        a.`maxDurationOfStay`,
+        a.`needDatum`,
+        a.`recommend`,
+        a.`sysUserId`
+
+        FROM
+        `visa` a
+        LEFT JOIN `visa_nation` b
+        ON a.`visaNationId` = b.`id`
+        LEFT JOIN `visa_type` c
+        ON a.`visaTypeId` = c.`id`
+        LEFT JOIN `region` d
+        ON a.`issueAt` =d.`id`
+        WHERE 1=1 ORDER BY a.`id` DESC
+    </select>
+</mapper>

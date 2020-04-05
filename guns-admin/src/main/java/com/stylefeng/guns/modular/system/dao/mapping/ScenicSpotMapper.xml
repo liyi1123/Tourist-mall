@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ScenicSpotMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.ScenicSpot">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="grade" property="grade" />
+        <result column="regionId" property="regionId" />
+        <result column="productTypeId" property="productTypeId" />
+        <result column="adultTicket" property="adultTicket" />
+        <result column="childrenTicket" property="childrenTicket" />
+        <result column="specialTiclet" property="specialTiclet" />
+        <result column="address" property="address" />
+        <result column="openTime" property="openTime" />
+        <result column="introduce" property="introduce" />
+        <result column="commitment" property="commitment" />
+        <result column="map_x" property="mapX" />
+        <result column="map_y" property="mapY" />
+        <result column="recommend" property="recommend" />
+        <result column="hot" property="hot" />
+        <result column="img1" property="img1" />
+        <result column="img2" property="img2" />
+        <result column="img3" property="img3" />
+        <result column="img4" property="img4" />
+        <result column="img5" property="img5" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, grade, regionId, productTypeId, adultTicket, childrenTicket, specialTiclet, address, openTime, introduce, commitment, map_x AS mapX, map_y AS mapY, recommend, hot, img1, img2, img3, img4, img5
+    </sql>
+    <select id="list" resultType="map">
+        SELECT
+          a.`id`,
+          a.`name`,
+          (
+            CASE
+              WHEN `grade` = 1 THEN '★'
+              WHEN `grade` = 2 THEN '★★'
+              WHEN `grade` = 3 THEN '★★★'
+              WHEN `grade` = 4 THEN '★★★★'
+              WHEN `grade` = 5 THEN '★★★★★'
+              ELSE '暂无评级'
+            END
+          ) AS grade,
+          b.`name` regionName,
+          c.`name` productTypeName,
+          a.`adultTicket`,
+          a.`childrenTicket`,
+          a.`specialTiclet`,
+          a.`address`,
+          a.`openTime`,
+          IF(
+            a.`recommend` = 1,
+            "强烈推荐",
+            NULL
+          ) recommend,
+          IF(a.`hot` = 1, "热点景区", NULL) hot
+        FROM
+          `scenic_spot` a
+          LEFT JOIN `region` b
+            ON a.`regionId` = b.`id`
+          LEFT JOIN `product_type` c
+            ON a.`productTypeId` = c.id
+        <if test="condition != null and condition != ''">
+          where a.name like CONCAT('%',#{condition},'%')
+        </if>
+        order by a.id DESC
+    </select>
+    <!-- 获取所有景点类型的列表的集合 -->
+    <select id="listScenic" resultType="com.stylefeng.guns.modular.system.model.ScenicSpot">
+
+            SELECT
+      a.`id`,
+      a.`name`,
+      a.`grade`,
+      a.`regionId`,
+      a.`productTypeId`,
+      a.`adultTicket`,
+      a.`childrenTicket`,
+      a.`specialTiclet`,
+      a.`address`,
+      a.`openTime`,
+      a.`introduce`,
+      a.`commitment`,
+      a.`map_x`,
+      a.`map_y`,
+      a.`recommend`,
+      a.`hot`,
+      a.`img1`,
+      a.`img2`,
+      a.`img3`,
+      a.`img4`,
+      a.`img5`
+    FROM
+      `scenic_spot` a  WHERE a.`productTypeId` = #{productTypeId} ORDER BY a.`id` desc LIMIT 0, 8;
+
+    </select>
+
+
+
+    <insert id="addScenicSpot" useGeneratedKeys="true" keyProperty="id" parameterType="com.stylefeng.guns.modular.system.model.ScenicSpot">
+        insert into scenic_spot
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="grade != null" >
+                grade,
+            </if>
+            <if test="regionId != null" >
+                regionId,
+            </if>
+            <if test="productTypeId != null" >
+                productTypeId,
+            </if>
+            <if test="adultTicket != null" >
+                adultTicket,
+            </if>
+            <if test="childrenTicket != null" >
+                childrenTicket,
+            </if>
+            <if test="specialTiclet != null" >
+                specialTiclet,
+            </if>
+            <if test="address != null" >
+                address,
+            </if>
+            <if test="openTime != null" >
+                openTime,
+            </if>
+            <if test="mapX != null" >
+                map_x,
+            </if>
+            <if test="mapY != null" >
+                map_y,
+            </if>
+            <if test="recommend != null" >
+                recommend,
+            </if>
+            <if test="hot != null" >
+                hot,
+            </if>
+            <if test="img1 != null" >
+                img1,
+            </if>
+            <if test="img2 != null" >
+                img2,
+            </if>
+            <if test="img3 != null" >
+                img3,
+            </if>
+            <if test="img4 != null" >
+                img4,
+            </if>
+            <if test="img5 != null" >
+                img5,
+            </if>
+            <if test="introduce != null" >
+                introduce,
+            </if>
+            <if test="commitment != null" >
+                commitment,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="grade != null" >
+                #{grade,jdbcType=VARCHAR},
+            </if>
+            <if test="regionId != null" >
+                #{regionId,jdbcType=INTEGER},
+            </if>
+            <if test="productTypeId != null" >
+                #{productTypeId,jdbcType=INTEGER},
+            </if>
+            <if test="adultTicket != null" >
+                #{adultTicket,jdbcType=REAL},
+            </if>
+            <if test="childrenTicket != null" >
+                #{childrenTicket,jdbcType=REAL},
+            </if>
+            <if test="specialTiclet != null" >
+                #{specialTiclet,jdbcType=REAL},
+            </if>
+            <if test="address != null" >
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="openTime != null" >
+                #{openTime,jdbcType=VARCHAR},
+            </if>
+            <if test="mapX != null" >
+                #{mapX,jdbcType=VARCHAR},
+            </if>
+            <if test="mapY != null" >
+                #{mapY,jdbcType=VARCHAR},
+            </if>
+            <if test="recommend != null" >
+                #{recommend,jdbcType=INTEGER},
+            </if>
+            <if test="hot != null" >
+                #{hot,jdbcType=INTEGER},
+            </if>
+            <if test="img1 != null" >
+                #{img1,jdbcType=VARCHAR},
+            </if>
+            <if test="img2 != null" >
+                #{img2,jdbcType=VARCHAR},
+            </if>
+            <if test="img3 != null" >
+                #{img3,jdbcType=VARCHAR},
+            </if>
+            <if test="img4 != null" >
+                #{img4,jdbcType=VARCHAR},
+            </if>
+            <if test="img5 != null" >
+                #{img5,jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null" >
+                #{introduce,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="commitment != null" >
+                #{commitment,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="select" resultType="java.util.Map">
+        SELECT
+          a.`id`,
+          a.`name`,
+          (
+            CASE
+              WHEN `grade` = 1 THEN '★'
+              WHEN `grade` = 2 THEN '★★'
+              WHEN `grade` = 3 THEN '★★★'
+              WHEN `grade` = 4 THEN '★★★★'
+              WHEN `grade` = 5 THEN '★★★★★'
+              ELSE '暂无评级'
+            END
+          ) AS grade,
+          b.`name` regionName,
+          c.`name` productTypeName,
+          a.`adultTicket`,
+          a.`childrenTicket`,
+          a.`specialTiclet`,
+          a.`introduce`,
+          a.`commitment`,
+          a.`map_x`,
+          a.`map_y`,
+          a.`img1`,
+          a.`img2`,
+          a.`img3`,
+          a.`img4`,
+          a.`img5`,
+          a.`address`,
+          a.`openTime`,
+          IF(
+            a.`recommend` = 1,
+            "强烈推荐",
+            NULL
+          ) recommend,
+          IF(a.`hot` = 1, "热点景区", NULL) hot
+        FROM
+          `scenic_spot` a
+          LEFT JOIN `region` b
+            ON a.`regionId` = b.`id`
+          LEFT JOIN `product_type` c
+            ON a.`productTypeId` = c.id
+            WHERE a.`id`= #{scenicSpotId}
+    </select>
+
+    <select id="scenicTypeList" resultType="java.util.Map">
+        SELECT
+          a.`id`,
+          a.`name`,
+          (
+            CASE
+              WHEN `grade` = 1 THEN '★'
+              WHEN `grade` = 2 THEN '★★'
+              WHEN `grade` = 3 THEN '★★★'
+              WHEN `grade` = 4 THEN '★★★★'
+              WHEN `grade` = 5 THEN '★★★★★'
+              ELSE '暂无评级'
+            END
+          ) AS grade,
+          b.`name` productTypeName,
+          c.`name` regionName,
+          a.`adultTicket`,
+          a.`childrenTicket`,
+          a.`specialTiclet`,
+          a.`introduce`,
+          a.`commitment`,
+          a.`map_x`,
+          a.`map_y`,
+          a.`img1`,
+          a.`img2`,
+          a.`img3`,
+          a.`img4`,
+          a.`img5`,
+          a.`address`,
+          a.`openTime`,
+          IF(
+            a.`recommend` = 1,
+            "强烈推荐",
+            NULL
+          ) recommend,
+          IF(a.`hot` = 1, "热点景区", NULL) hot
+        FROM
+          `scenic_spot` a
+          LEFT JOIN `product_type` b
+            ON a.`productTypeId` = b.id
+          LEFT JOIN `region` c
+            ON a.`regionId` = c.id
+            WHERE a.`productTypeId`= #{productTypeId}
+    </select>
+
+
+    <select id="scenicSpotList" resultType="java.util.Map">
+        SELECT
+      a.`id`,
+      a.`name`,
+      a.`grade`,
+      a.`regionId`,
+      b.`name` regionName,
+      a.`recommend`,
+      a.`hot`,
+      a.`img1`
+    FROM
+      `guns`.`scenic_spot` a
+      LEFT JOIN `region` b
+        ON a.`regionId` = b.`id`
+    WHERE 1 = 1
+    <if test="productTypeId != null and productTypeId != ''" >
+        AND a.`productTypeId` = #{productTypeId}
+    </if>
+
+    <if test="regionId != null and regionId != ''" >
+        AND a.`regionId` = #{regionId}
+    </if>
+
+    </select>
+
+
+
+
+</mapper>

@@ -1,0 +1,42 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" value="${item.id}" underline="true"/>
+                            <#input id="parentId" name="父ID;0-订单;大于0-订单详情" value="${item.parentId}" underline="true"/>
+                            <#input id="orderType" name="订单类型:1景点;2酒店;3租车;4签证" value="${item.orderType}" underline="true"/>
+                            <#input id="productId" name="对应的产品ID" value="${item.productId}" underline="true"/>
+                            <#input id="buyerId" name="买家ID" value="${item.buyerId}" underline="true"/>
+                            <#input id="addressId" name="收货地址表ID" value="${item.addressId}" underline="true"/>
+                            <#input id="orderNum" name="订单编号" value="${item.orderNum}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="number" name="数量" value="${item.number}" underline="true"/>
+                            <#input id="lastTime" name="最晚到店时间" value="${item.lastTime}" underline="true"/>
+                            <#input id="checkInTime" name="入住时间" value="${item.checkInTime}" underline="true"/>
+                            <#input id="checkOutTime" name="离店时间" value="${item.checkOutTime}" underline="true"/>
+                            <#input id="totalMoney" name="总金额" value="${item.totalMoney}" underline="true"/>
+                            <#input id="usingIntegral" name="使用积分" value="${item.usingIntegral}" underline="true"/>
+                            <#input id="desc" name="备注" value="${item.desc}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="OrdersInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="OrdersInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ <script src="${ctxPath}/static/modular/travel/orders_info.js"></script>
+@}

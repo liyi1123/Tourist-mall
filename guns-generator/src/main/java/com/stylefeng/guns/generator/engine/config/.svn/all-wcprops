@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config
+END
+SqlConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/SqlConfig.java
+END
+Menu.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/Menu.java
+END
+ControllerConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ControllerConfig.java
+END
+ServiceConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ServiceConfig.java
+END
+DaoConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/DaoConfig.java
+END
+ContextConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ContextConfig.java
+END
+PageConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/PageConfig.java
+END

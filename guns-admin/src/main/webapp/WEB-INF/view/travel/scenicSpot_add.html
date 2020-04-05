@@ -1,0 +1,209 @@
+@layout("/common/_container.html"){
+
+<div class="ibox">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="scenicSpotInfoForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="name" name="景点名称" underline="true"/>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">景点级别</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control m-b" id="grade" >
+                                        <option value="1">★</option>
+                                        <option value="2">★★</option>
+                                        <option value="3" selected>★★★</option>
+                                        <option value="4">★★★★</option>
+                                        <option value="5">★★★★★</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <#input id="regionName" name="所属区域" underline="true" readonly="readonly" hidden="regionId"
+                                    clickFun="ScenicSpotInfoDlg.showDeptSelectTree(); return false;"
+                                    style="background-color: #ffffff !important;" />
+                            <!-- 父级部门的选择框 -->
+                            <div id="parentDeptMenu" class="menuContent" style="display: none; position: absolute; z-index: 200;">
+                                <ul id="parentDeptMenuTree" class="ztree tree-box" style="width: 388px !important;"></ul>
+                            </div>
+
+
+                            <#select id="productTypeId" name="产品类型" underline="true" >
+                                @if(tool.isEmpty(productTypeList)){
+                                <option value="-1" selected>-- 暂无类型 --</option>
+                                @}else{
+                                    @for(productType in productTypeList){
+                                        <option value="${productType.id}" >${productType.name}</option>
+                                    @}
+                                @}
+                            </#select>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">成人票价</label>
+                                <div class="col-sm-9">
+                                    <div  class="input-group">
+                                        <span class="input-group-addon">¥</span>
+                                        <input type="text" class="form-control" id="adultTicket" />
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">儿童票价</label>
+                                <div class="col-sm-9">
+                                    <div  class="input-group">
+                                        <span class="input-group-addon">¥</span>
+                                        <input type="text" class="form-control" id="childrenTicket" />
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">特殊票价</label>
+                                <div class="col-sm-9">
+                                    <div  class="input-group">
+                                        <span class="input-group-addon">¥</span>
+                                        <input type="text" class="form-control" id="specialTiclet" />
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="mapX" name="经度X" underline="true"/>
+                            <#input id="mapY" name="维度Y" underline="true"/>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">推荐</label>
+                                <div class="col-sm-9">
+                                    <select id="recommend" class="form-control m-b">
+                                        <option value="1">是</option>
+                                        <option value="-1" selected>否</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                           <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">热点</label>
+                                <div class="col-sm-9">
+                                    <select id="hot" class="form-control m-b">
+                                        <option value="1">是</option>
+                                        <option value="-1" selected>否</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                    <#input id="address" name="地址" underline="true"/>
+                    <#input id="openTime" name="开放时间" underline="true" type="date" clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">景点主题</label>
+
+                        <div class="col-sm-9">
+                            @if(tool.isNotEmpty(themeList)){
+                                @for(theme in themeList){
+                                    <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" name="themeList" value="${theme.id}" >${theme.name}
+                                    </label>
+                                @}
+                            @}
+                        </div>
+
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>景点介绍</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-eye-slash" title="点击展开内容"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content no-padding" style="display: none;">
+                            <div class="summernote" id="introduce"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>服务承诺</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-eye-slash" title="点击展开内容"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content no-padding" style="display: none;">
+                            <div class="summernote" id="commitment"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <!-- 模态框声明 -->
+            <div class="modal animated flip" id="coordinateModal" tabindex="-1" style="right: 150px;">
+                <!-- 窗口声明 -->
+                <div class="modal-dialog">
+                    <!-- 内容声明 -->
+                    <div class="modal-content" style="width: 802px;">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                            <h4 class="modal-title">获取坐标</h4>
+                        </div>
+                        <div class="modal-body" style="padding: 0;">
+                            <div id="mapBox" style="width: 800px;height: 500px;"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ScenicSpotInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ScenicSpotInfoDlg.close()"/>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y9M7Vw9GIx9q2yAophK72OG5YV1DtOWp"></script>
+<script src="${ctxPath}/static/js/plugins/summernote/summernote.min.js"></script>
+<script src="${ctxPath}/static/js/plugins/summernote/summernote-zh-CN.js"></script>
+<script src="${ctxPath}/static/modular/travel/scenicSpot_info.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+@}

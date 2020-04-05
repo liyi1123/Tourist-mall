@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.RegionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Region">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="parentId" property="parentId" />
+        <result column="parentIdList" property="parentIdList" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, parentId, parentIdList
+    </sql>
+
+
+    <select id="tree" resultType="com.stylefeng.guns.core.node.ZTreeNode">
+    SELECT
+      `id`,
+      `name`,
+      `parentId` AS pId,
+      (CASE WHEN (parentId = 0 OR parentId IS NULL) THEN 'true' ELSE 'false' END) AS isOpen
+    FROM `region`
+    </select>
+    <select id="selectRegionById" resultType="com.stylefeng.guns.modular.system.model.Region">
+    SELECT
+  `id`,
+  `name`,
+  `parentId`,
+  `parentIdList`
+FROM
+  `region`
+WHERE id = #{id}
+    </select>
+
+</mapper>

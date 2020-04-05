@@ -1,0 +1,205 @@
+10
+
+dir
+124
+https://www.czsoft.vip:8443/svn/cz/guns/guns-admin/src/main/webapp/static/js/plugins
+https://www.czsoft.vip:8443/svn/cz
+
+
+
+2018-12-06T06:37:16.006074Z
+123
+mll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7224affa-aab2-fe44-ba3c-2750840afe1d
+
+beautifyhtml
+dir
+
+blueimp
+dir
+
+bootstrap-table
+dir
+
+chartJs
+dir
+
+chosen
+dir
+
+clockpicker
+dir
+
+codemirror
+dir
+
+colorpicker
+dir
+
+cropper
+dir
+
+dataTables
+dir
+
+datapicker
+dir
+
+diff_match_patch
+dir
+
+dropzone
+dir
+
+duallistbox
+dir
+
+easypiechart
+dir
+
+echarts
+dir
+
+fancybox
+dir
+
+flot
+dir
+
+footable
+dir
+
+fullcalendar
+dir
+
+gritter
+dir
+
+iCheck
+dir
+
+ionRangeSlider
+dir
+
+jasny
+dir
+
+jeditable
+dir
+
+jqgrid
+dir
+
+jquery-treegrid
+dir
+
+jquery-ui
+dir
+
+jsKnob
+dir
+
+jsTree
+dir
+
+jvectormap
+dir
+
+layer
+dir
+
+layui
+dir
+
+markdown
+dir
+
+metisMenu
+dir
+
+morris
+dir
+
+multiselect
+dir
+
+nestable
+dir
+
+nouslider
+dir
+
+pace
+dir
+
+peity
+dir
+
+plyr
+dir
+
+preetyTextDiff
+dir
+
+prettyfile
+dir
+
+rickshaw
+dir
+
+simditor
+dir
+
+slimscroll
+dir
+
+sparkline
+dir
+
+staps
+dir
+
+suggest
+dir
+
+summernote
+dir
+
+sweetalert
+dir
+
+switchery
+dir
+
+toastr
+dir
+
+treeview
+dir
+
+validate
+dir
+
+wangEditor
+dir
+
+webuploader
+dir
+
+ztree
+dir
+

@@ -1,0 +1,60 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+	<div class="ibox-content">
+		<div class="form-horizontal" id="userInfoForm">
+		
+			<input type="hidden" id="id" value="">
+
+
+			<div class="row" id="dlg2">
+
+				<form id="uploadForm"  method="post" enctype="multipart/form-data">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">下载模版：</label>
+                                <div class="col-sm-6">
+                                    <a href="javascript:;" class="btn btn-success" title="userExporTemplate.xls" onclick="downloadTemplate()">模板下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+				</form>
+
+                    <form method="post" enctype="multipart/form-data" id="upload" class="form-group">
+                        <div class="col-sm-3">
+                            <label class="font-noraml ">文件选择（单选）</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="file" name="file" class="uploadfile form-control" id="file">
+                        </div>
+                        <br><br>
+                        <div class="row btn-group-m-t">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                                <!--<input type="button" value="上传" class="" />-->
+                                <button class="btn btn-primary" id="addbtn" style="margin-left: 9px;">
+                                    <i class="fa fa-cloud-upload"></i>
+                                    上传
+                                </button>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="UserInfoDlg.close()"/>
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </form>
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+</div>
+<script src="${ctxPath}/static/modular/system/user/user_info.js"></script>
+@}

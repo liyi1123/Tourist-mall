@@ -1,0 +1,129 @@
+
+<div class="allPage">
+
+<!--景点List Begin-->
+<div class="scenic-body">
+    <div class="container">
+        <!--路径导航(面包屑)-->
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="">首页</a></li>
+                <li><a href="">景点</a></li>
+                @if(tool.isNotEmpty(currProductType)){
+                <li><a href="#">${currProductType.name}</a></li>
+                @}
+            </ul>
+        </div>
+
+        <!-- layPage 分页-->
+        <div class="row">
+            <div id="demo7"></div>
+        </div>
+
+        <div class="row">
+            <div class="wk_personal_tablist">
+                <a href="javascript:;"
+                   @if(isEmpty(currProductType)){
+                    class="cur"
+                   @}
+                   onclick="currType(this)" value="0">全部<span></span></a><i>|</i>
+                @if(isNotEmpty(productTypeList)){
+                    @for(productType in productTypeList){
+                        @if(isNotEmpty(productType )){
+                            <a href="javascript:;"
+                            @if(tool.isNotEmpty(currProductType) && productType.id == currProductType.id){
+                               class = "cur"
+                            @}
+                             onclick="currType(this)" value="${productType.id}"><span>${productType.name}</span></a><i>|</i>
+                        @}
+                    @}
+                @}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <!--items-->
+                @if(isNotEmpty(scenicSpotListDetail)){
+                    @for(scenicSpot in scenicSpotListDetail){
+                        @if(isNotEmpty(scenicSpot)){
+                            <div class="row scenic-item">
+                                <div class="col-sm-4">
+                                    <a href="${ctxPath}/travel/getScenicSpotDetail/${scenicSpot.id}" class="thumbnail">
+                                        @if(isNotEmpty(scenicSpot.img1)){
+                                            <img src="${ctxPath}/static/img/${scenicSpot.img1}" alt="" />
+                                        @}
+                                    </a>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="row  scenic-title">
+                                        <a href="${ctxPath}/travel/getScenicSpotDetail/${scenicSpot.id}"><h4>${scenicSpot.name}</h4></a>
+                                    </div>
+                                    <div class="row scenic-item-subheading">
+                                        <em>${scenicSpot.address}</em>
+                                    </div>
+                                    <!--价格-->
+                                    <div class="row">
+                                        <div class="col-sm-4 col-sm-offset-7 prices">
+                                            <span>
+                                                <dfn>¥</dfn>
+                                                ${scenicSpot.adultTicket}
+                                                <em>起/人</em>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @}
+                    @}
+                @}
+
+                <!--items End-->
+            </div>
+            <div class="col-sm-4">
+                <div class="row region">
+                    <div class="container-fluid">
+                        <div class="panel panel-info">
+                            <h6 class="panel-heading panel-title">
+                                所属地区
+                            </h6>
+                            <div class="panel-body">
+
+                                <span class="btn
+                                @if(isEmpty(currRegionId) || 0 == currRegionId){
+                                    btn-warning
+                                @}else{
+                                    btn-info
+                                @}
+                                    btn-sm" value="0" onclick="currRegion(this)">全部</span>
+                                @if(isNotEmpty(regionList)){
+                                    @for(region in regionList){
+                                        @if(isNotEmpty(region )){
+                                            <span class="btn
+                                                @if(region.id == currRegionId){
+                                                    btn-warning
+                                                @}else{
+                                                    btn-info
+                                                @}
+                                                    btn-info
+                                                    btn-sm" onclick="currRegion(this)" value="${region.id}">${region.name}</span>
+                                        @}
+                                    @}
+                                @}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="" class="thumbnail">
+                        <img src="${ctxPath}/static/img/3a4e.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>

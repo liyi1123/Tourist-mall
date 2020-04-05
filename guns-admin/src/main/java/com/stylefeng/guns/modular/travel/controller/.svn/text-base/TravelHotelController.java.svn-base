@@ -1,0 +1,122 @@
+package com.stylefeng.guns.modular.travel.controller;
+
+import com.baomidou.mybatisplus.plugins.Page;
+import com.stylefeng.guns.core.common.constant.factory.PageFactory;
+import com.stylefeng.guns.core.util.ToolUtil;
+import com.stylefeng.guns.modular.system.model.Brand;
+import com.stylefeng.guns.modular.system.model.Hotel;
+import com.stylefeng.guns.modular.system.model.ProductType;
+import com.stylefeng.guns.modular.system.model.Region;
+import com.stylefeng.guns.modular.travel.service.IBrandService;
+import com.stylefeng.guns.modular.travel.service.IHotelService;
+import com.stylefeng.guns.modular.travel.service.IProductTypeService;
+import com.stylefeng.guns.modular.travel.service.IRegionService;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+import java.util.Map;
+
+@Controller
+@RequestMapping("/travelHotel")
+public class TravelHotelController {
+    private static Logger log = Logger.getLogger(TravelHotelController.class);
+
+    //地址前缀
+    private String PREFIX = "/travel/";
+
+    @Autowired
+    private IProductTypeService productTypeService;
+
+    @Autowired
+    private IRegionService regionService;
+
+    @Autowired
+    private IBrandService brandService;
+
+    @Autowired
+    private IHotelService hotelService;
+
+    /**
+     * 返回酒店主页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/hotelList/{current}/{limit}/{productTypeId}/{gradeId}/{regionId}/{brandId}")
+    public String getTravelHotel(Model model, @PathVariable(value = "current",required = false) Integer current,
+                                 @PathVariable(value = "limit",required = false) Integer limit,
+                                 @PathVariable(value = "productTypeId",required = false) Integer productTypeId,
+                                 @PathVariable(value = "gradeId",required = false) Integer gradeId,
+                                 @PathVariable(value = "regionId",required = false) Integer regionId,
+                                 @PathVariable(value = "brandId",required = false) Integer brandId){
+        log.info("进入travelHotel");
+        Page<Hotel> page = new PageFactory<Hotel>().defaultPage();
+        page.setCurrent(current).setSize(limit);
+
+        List<Map<String,Object>> hotelList = hotelService.hotelList(page,
+                (ToolUtil.isEmpty(productTypeId) || 0 == productTypeId) ? null:productTypeId,
+                (ToolUtil.isEmpty(gradeId) || 0 == gradeId) ? null:gradeId,
+                (ToolUtil.isEmpty(regionId) || 0 == regionId) ? null:regionId,
+                (ToolUtil.isEmpty(brandId) || 0 == brandId) ? null:brandId);
+
+        //得到产品类型
+        ProductType currProductType = null;
+        if(ToolUtil.isNotEmpty(productTypeId) && productTypeId !=0){
+            currProductType = productTypeService.select(productTypeId);
+        }
+
+        List<ProductType> productTypeList = productTypeService.list(Common.PRODUCTTYPE_HOTEL);
+        List<Region> regionList = regionService.selectList(null);
+        List<Brand> brandList = brandService.selectList(null);
+        //List<Map<String,Object>> hotelList = hotelService.list(null);
+        model.addAttribute("productTypeList",productTypeList)
+                .addAttribute("currProductType",currProductType )
+                .addAttribute("page",page)
+                .addAttribute("regionList",regionList)
+                .addAttribute("brandList",brandList)
+                .addAttribute("hotelList",hotelList);
+        return PREFIX+"hotelList.html";
+    }
+
+    /**
+     * 酒店星级重定向到酒店页面
+     */
+    @RequestMapping("/grade/{hotelId}")
+    public String getGradeHotel(Model model,@PathVariable Integer hotelId) {
+        Map<String,Object> hotelDetailOrder = hotelService.hotelDetail(hotelId);
+        model.addAttribute("hotelDetailOrder",hotelDetailOrder);
+        return PREFIX+"hotelDetail.html";
+    }
+
+    /**
+     * 根据所属区域定位到酒店
+     */
+    @RequestMapping("/region")
+    public String getRegionHotel(Model model){
+        return " ";
+    }
+
+    /**
+     * 根据酒店品牌定位到酒店
+     */
+    @RequestMapping("/brandId")
+    public String getBrandHotel(Model model){
+        return " ";
+    }
+
+    @RequestMapping("/getHotelBooking/{hotelId}")
+    public String getHotelBooking(@PathVariable Integer hotelId,Model model){
+
+        Hotel hotel = hotelService.selectById(hotelId);
+
+        model.addAttribute("hotel",hotel);
+        return PREFIX+"hotelBooking.html";
+    }
+
+
+}

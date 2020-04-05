@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check
+END
+ICheck.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/ICheck.java
+END
+PermissionCheckManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/PermissionCheckManager.java
+END
+PermissionCheckFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/PermissionCheckFactory.java
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common
+END
+t_Header.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/t_Header.html
+END
+_tab.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/_tab.html
+END
+t_Footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/t_Footer.html
+END
+_container.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/_container.html
+END
+_right.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/_right.html
+END
+t_Body.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/t_Body.html
+END
+t_scenic_spot_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/t_scenic_spot_detail.html
+END
+_theme.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/_theme.html
+END
+t_scenic_spot_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/common/t_scenic_spot_list.html
+END

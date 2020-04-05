@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl
+END
+DeptServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/DeptServiceImpl.java
+END
+DictServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/DictServiceImpl.java
+END
+RoleServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/RoleServiceImpl.java
+END
+NoticeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/NoticeServiceImpl.java
+END
+LoginLogServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/LoginLogServiceImpl.java
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/UserServiceImpl.java
+END
+RelationServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/RelationServiceImpl.java
+END
+OperationLogServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/OperationLogServiceImpl.java
+END
+MenuServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/MenuServiceImpl.java
+END

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service
+END
+IServicesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IServicesService.java
+END
+IVisaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IVisaService.java
+END
+IAddressService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IAddressService.java
+END
+IHotelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IHotelService.java
+END
+ISignInService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/ISignInService.java
+END
+IOrdersService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IOrdersService.java
+END
+IVisaNationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IVisaNationService.java
+END
+IRentCarService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IRentCarService.java
+END
+ICarBrandService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/ICarBrandService.java
+END
+IRegionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IRegionService.java
+END
+IBrandService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IBrandService.java
+END
+IMiddleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IMiddleService.java
+END
+IScenicSpotService.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IScenicSpotService.java
+END
+IProductTypeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IProductTypeService.java
+END
+IThemeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IThemeService.java
+END
+IImagesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IImagesService.java
+END
+IProductMThemeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IProductMThemeService.java
+END
+IAccountService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IAccountService.java
+END
+IVisaTypeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/travel/service/IVisaTypeService.java
+END

@@ -1,0 +1,215 @@
+
+<div class="allPage">
+
+
+<!--景点List Begin-->
+<div class="scenic-body">
+    <div class="container">
+        <!--路径导航(面包屑)-->
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="">首页</a></li>
+                <li><a href="">酒店</a></li>
+            </ul>
+        </div>
+        <!--酒店:搜索条件-->
+        <div class="row">
+            <form action="">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="wk_personal_tablist">
+                            <a href="javascript:;"
+                               @if(isEmpty(currProductType)){
+                               class="cur"
+                               @}
+                               onclick="currType(this)" value="0">酒店类型 :<span></span></a><i>|</i>
+                            @if(isNotEmpty(productTypeList)){
+                                @for(productType in productTypeList){
+                                    @if(isNotEmpty(productType)){
+                                    <a href="javascript:;"
+                                       @if(tool.isNotEmpty(currProductType) && productType.id == currProductType.id){
+                                       class = "cur"
+                                       @}
+                                       onclick="currType(this)" value="${productType.id}"><span>${productType.name}</span></a><i>|</i>
+                                    @}
+                                @}
+                            @}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                        <div class="wk_personal_tablist">
+                            <a href="#" class="cur">酒店星级:<span></span></a><i>|</i>
+                            <a href="#">一星级<span></span></a><i>|</i>
+                            <a href="#">二星级<span></span></a><i>|</i>
+                            <a href="#">三星级<span></span></a><i>|</i>
+                            <a href="#">四星级<span></span></a><i>|</i>
+                            <a href="#">五星级<span></span></a><i>|</i>
+                            <a href="#">六星级<span></span></a><i>|</i>
+                            <a href="#">七星级<span></span></a><i>|</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="wk_personal_tablist">
+                            <a href="#" class="cur">所属区域 :<span></span></a><i>|</i>
+                            @if(isNotEmpty(regionList)){
+                                @for(region in regionList){
+                                    @if(isNotEmpty(region)){
+                                        <a href="#">${region.name}<span></span></a><i>|</i>
+                                    @}
+                                @}
+                            @}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="wk_personal_tablist">
+                            <a href="#" class="cur">品牌 :<span></span></a><i>|</i>
+                            @if(isNotEmpty(brandList)){
+                                @for(brand in brandList){
+                                    @if(isNotEmpty(brand)){
+                                        <a href="#">${brand.name}<span></span></a><i>|</i>
+                                    @}
+                                @}
+                            @}
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- layui 分页-->
+        <div class="row">
+            <div id="demo7"></div>
+        </div>
+
+        <!--hotel主区域-->
+        <div class="row">
+            <!--热门城市-->
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="panel panel-success">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title"  style="font-weight: 700;">热门城市</h3>
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_bj.jpg" class="img-responsive img-rounded" alt="北京" />
+                                        <span class="city">北京</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_gz.jpg" class="img-responsive img-rounded" alt="广州" />
+                                        <span class="city">广州</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_sh.jpg" class="img-responsive img-rounded" alt="上海" />
+                                        <span class="city">上海</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_qd.jpg" class="img-responsive img-rounded" alt="广州" />
+                                        <span class="city">青岛</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_cd.jpg" class="img-responsive img-rounded" alt="成都" />
+                                        <span class="city">成都</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_hz.jpg" class="img-responsive img-rounded" alt="杭州" />
+                                        <span class="city">杭州</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_xm.jpg" class="img-responsive img-rounded" alt="厦门" />
+                                        <span class="city">厦门</span>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 hot-city">
+                                    <a href="" class="">
+                                        <img src="img/city_sz.jpg" class="img-responsive img-rounded" alt="深圳" />
+                                        <span class="city">深圳</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-8">
+                <!-- item -->
+
+                @if(isNotEmpty(hotelList)){
+                    @for(hotel in hotelList){
+                        @if(isNotEmpty(hotel)){
+                            <div class="row scenic-item">
+                                <div class="col-sm-4">
+                                    <a href="${ctxPath}/travelHotel/grade/${hotel.id}" class="thumbnail">
+                                        <img src="${ctxPath}/static/img/${hotel.img1}" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-8">
+
+                                    <div class="row  scenic-title">
+                                        <a href="${ctxPath}/travelHotel/grade/${hotel.id}"><h4>${hotel.name}</h4></a>
+                                    </div>
+                                    <div class="row scenic-item-subheading">
+                                        <em>${hotel.title}</em>
+                                    </div>
+                                    <div class="row">
+                                        <span >${hotel.grade}</span>
+                                    </div>
+                                    <!--价格-->
+                                    <div class="row">
+                                        <div class="col-sm-4 col-sm-offset-7 prices">
+                                            <span>
+                                                <dfn>¥</dfn>
+                                                ${hotel.price}
+                                                <em>起/人</em>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        @}
+                    @}
+                @}
+
+
+                <!--items End-->
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

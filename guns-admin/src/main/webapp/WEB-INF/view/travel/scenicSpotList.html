@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Travel - 主页</title>
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="${ctxPath}/favicon.ico">
+    <link href="${ctxPath}/static/css/init.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/layui/layui.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/js/plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/travelStyle.css" rel="stylesheet">
+<!--全局的js-->
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="${ctxPath}/static/js/plugins/layui/layui.js"></script>
+    <script src="${ctxPath}/static/js/common/Feng.js"></script>
+    <script type="text/javascript">
+        Feng.addCtx("${ctxPath}");
+        Feng.sessionTimeoutRegistry();
+    </script>
+    <script src="${ctxPath}/static/js/common/MaoPage.js"></script>
+</head>
+<body>
+<div class="allPage">
+    <input type="hidden" id="page-info" value="${page.total}"  page-size="${page.size!}" page-current="${page.current}" page-currTypeId="${productTypeId!}" page-currRegionId="${currRegionId}" />
+    <!-- 头部边栏开始 -->
+    @include("/common/t_Header.html"){}
+
+    <!--身体部分开始-->
+    @include("/common/t_scenic_spot_list.html"){}
+
+    <!-- 底部边栏开始-->
+    @include("/common/t_Footer.html"){}
+
+
+</div>
+
+
+</body>
+
+
+<script>
+    var $input = $("#page-info");
+    var arr = ['page-currTypeId','page-currRegionId'];
+    var p = new MaoPage({id:'demo7',inputId:'page-info',url :"/travel/scenicSpotList"});
+    p.setParam(arr).start();
+
+
+    function currRegion(me){
+        var $me =$(me);
+        var regionId = $me.attr('value');
+        $('#page-info').attr('page-currRegionId',regionId);
+        $me.siblings(".btn-warning").removeClass("btn-warning").addClass("btn-info");
+        $me.removeClass("btn-info").addClass("btn-warning");
+    };
+
+    function currType(me){
+        var $me =$(me),currProductTypeId = $me.attr('value');
+        console.log(currProductTypeId);
+        $('#page-info').attr('page-currtypeid',currProductTypeId);
+        $me.siblings(".cur").removeClass("cur");
+        $me.addClass("cur");
+    }
+
+
+
+    /*layui.use(['laypage','layer'], function (){
+        var laypage = layui.laypage, $pageInfo = $('#page-info');
+
+        laypage.render({
+            elem: 'demo7',
+            curr: $pageInfo.attr('page-current'),
+            count: $pageInfo.val(),
+            limit : $pageInfo.attr('page-size'),
+            layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+            jump: function (obj,first){
+                if(!first){
+                    var currProductType = $pageInfo.attr('page-currTypeId'),currRegionId = $pageInfo.attr('page-currRegionId');
+                    window.location.href = Feng.ctxPath + "/travel/scenicSpotList/" + obj.curr + "/" + obj.limit + "/"+currProductType+"/"+currRegionId;
+                }
+            }
+        });
+    });*/
+</script>
+
+</html>

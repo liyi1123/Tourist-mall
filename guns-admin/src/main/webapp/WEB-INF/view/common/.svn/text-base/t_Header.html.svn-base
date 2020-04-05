@@ -1,0 +1,74 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 search">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 hidden-xs">
+                        <a href="#" class="thumbnail">
+                            <img src="${ctxPath}/static/img/logo.png" alt="LOGO">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="搜索旅游/酒店/景点" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" >
+                                <i class="glyphicon glyphicon-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 login" >
+            <div class="container-fluid" style="padding: 0 0;">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-info btn-block" id="loginBtn" data-toggle="modal" data-target="#loginModal">
+                            <span class="glyphicon glyphicon-user"></span>
+                            登录
+                        </button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#registerModal">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            注册
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--导航 begin-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand logo visible-xs">
+                <img src="${ctxPath}/static/img/logo.png" alt="旅游实训网" />
+            </a>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-list"></span> 周边旅游</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-fire"></span> 国内旅游</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-plane"></span> 出境旅游</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-bed"></span> 酒店</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-tent"></span> 景点</a></li>
+                <li><a href="${ctxPath}/travel"><span class="glyphicon glyphicon-globe"></span> 签证</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</nav>

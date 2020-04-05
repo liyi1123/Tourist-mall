@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/qr
+END
+ImgQrTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/qr/ImgQrTool.java
+END
+QrImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/qr/QrImage.java
+END
+MatrixToImageWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/qr/MatrixToImageWriter.java
+END
+MatrixToImageConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cz/!svn/ver/123/guns/guns-core/src/main/java/com/stylefeng/guns/core/qr/MatrixToImageConfig.java
+END

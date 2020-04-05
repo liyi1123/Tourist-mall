@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.HotelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Hotel">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="title" property="title" />
+        <result column="grade" property="grade" />
+        <result column="regionId" property="regionId" />
+        <result column="productTypeId" property="productTypeId" />
+        <result column="address" property="address" />
+        <result column="map_x" property="mapX" />
+        <result column="map_y" property="mapY" />
+        <result column="price" property="price" />
+        <result column="discount" property="discount" />
+        <result column="tel" property="tel" />
+        <result column="openTime" property="openTime" />
+        <result column="bedType" property="bedType" />
+        <result column="introduce" property="introduce" />
+        <result column="img1" property="img1" />
+        <result column="img2" property="img2" />
+        <result column="img3" property="img3" />
+        <result column="img4" property="img4" />
+        <result column="img5" property="img5" />
+        <result column="hot" property="hot" />
+        <result column="recommend" property="recommend" />
+        <result column="sales" property="sales" />
+        <result column="brandId" property="brandId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, title, grade, regionId, productTypeId, address, map_x AS mapX, map_y AS mapY, price, discount, tel, openTime, bedType, introduce, img1, img2, img3, img4, img5, hot, recommend, sales, brandId
+    </sql>
+    <select id="list" resultType="map">
+    SELECT
+    a.`id`,
+    a.`name`,
+    a.`title`,
+    (
+    CASE
+    WHEN `grade` = 1 THEN '★'
+    WHEN `grade` = 2 THEN '★★'
+    WHEN `grade` = 3 THEN '★★★'
+    WHEN `grade` = 4 THEN '★★★★'
+    WHEN `grade` = 5 THEN '★★★★★'
+    ELSE '暂无评级' END ) AS grade,
+    b.`name` regionName,
+    c.`name` productTypeName,
+    a.`address`,
+    a.`price`,
+    a.`discount`,
+    a.`tel`,
+    a.`openTime`,
+    a.`bedType`,
+    a.`introduce`,
+    a.`img1`,
+    a.`img2`,
+    a.`img3`,
+    a.`img4`,
+    a.`img5`,
+    a.`sales`,
+    a.`brandId`,
+    (
+    CASE
+    WHEN `hot` = 1
+    THEN '★'
+    WHEN `hot` = 2
+    THEN '★★'
+    WHEN `hot` = 3
+    THEN '★★★'
+    WHEN `hot` = 4
+    THEN '★★★★'
+    WHEN `hot` = 5
+    THEN '★★★★★'
+    ELSE '暂无评级'
+    END
+    ) AS hot,
+    (
+    CASE
+    WHEN `recommend` = 1
+    THEN '★'
+    WHEN `recommend` = 2
+    THEN '★★'
+    WHEN `recommend` = 3
+    THEN '★★★'
+    WHEN `recommend` = 4
+    THEN '★★★★'
+    WHEN `recommend` = 5
+    THEN '★★★★★'
+    ELSE '暂无评级'
+    END
+    ) AS recommend
+    FROM
+    `hotel` a
+    LEFT JOIN `region` b
+    ON a.`regionId` = b.`id`
+    LEFT JOIN `product_type` c
+    ON a.`productTypeId` = c.id
+
+        <if test="condition != null and condition != ''">
+            where a.name like CONCAT('%',#{condition},'%')
+        </if>
+        order by a.id DESC
+
+    </select>
+    <select id="listHotel" resultType="com.stylefeng.guns.modular.system.model.Hotel">
+        SELECT
+          a.`id`,
+          a.`name`,
+          a.`title`,
+          a.`grade`,
+          a.`regionId`,
+          a.`productTypeId`,
+          a.`address`,
+          a.`map_x`,
+          a.`map_y`,
+          a.`price`,
+          a.`discount`,
+          a.`tel`,
+          a.`openTime`,
+          a.`bedType`,
+          a.`introduce`,
+          a.`img1`,
+          a.`img2`,
+          a.`img3`,
+          a.`img4`,
+          a.`img5`,
+          a.`hot`,
+          a.`recommend`,
+          a.`sales`,
+          a.`brandId`
+        FROM
+          `hotel` AS a
+        WHERE 1=1
+        <if test="productTypeId != null and productTypeId !=''">
+           AND a.`productTypeId` = #{productTypeId}
+        </if>
+        <if test="hotelId !=null and hotelId !=''">
+            AND a.`id` = #{hotelId}
+        </if>
+          ORDER BY a.`id` DESC LIMIT 0, 8 ;
+
+    </select>
+    <select id="hotelList" resultType="java.util.Map">
+
+        SELECT
+            a.`id`,
+            a.`name`,
+            a.`title`,
+            (
+                CASE
+                    WHEN `grade` = 1 THEN '★'
+                    WHEN `grade` = 2 THEN '★★'
+                    WHEN `grade` = 3 THEN '★★★'
+                    WHEN `grade` = 4 THEN '★★★★'
+                    WHEN `grade` = 5 THEN '★★★★★'
+                    ELSE '暂无评级'
+                END
+            ) AS grade,
+            b.`name` regionName,
+            c.`name` productTypeName,
+            a.`price`,
+            a.`img1`,
+            a.`sales`,
+            a.`brandId`,
+            (
+                CASE
+                    WHEN `hot` = 1
+                    THEN '★'
+                    WHEN `hot` = 2
+                    THEN '★★'
+                    WHEN `hot` = 3
+                    THEN '★★★'
+                    WHEN `hot` = 4
+                    THEN '★★★★'
+                    WHEN `hot` = 5
+                    THEN '★★★★★'
+                    ELSE '暂无评级'
+                END
+            ) AS hot,
+            (
+                CASE
+                    WHEN `recommend` = 1
+                    THEN '★'
+                    WHEN `recommend` = 2
+                    THEN '★★'
+                    WHEN `recommend` = 3
+                    THEN '★★★'
+                    WHEN `recommend` = 4
+                    THEN '★★★★'
+                    WHEN `recommend` = 5
+                    THEN '★★★★★'
+                    ELSE '暂无评级'
+                END
+            ) AS recommend
+            FROM
+            `hotel` a
+            LEFT JOIN `region` b
+              ON a.`regionId` = b.`id`
+            LEFT JOIN `product_type` c
+              ON a.`productTypeId` = c.`id`
+            WHERE 1 = 1
+        <if test="productTypeId != null and productTypeId != ''" >
+            AND a.`productTypeId` = #{productTypeId}
+        </if>
+        <if test="gradeId !=null and gradeId != ''">
+            AND a.`gradeId` = #{gradeId}
+        </if>
+        <if test="regionId !=null and regionId !=''">
+            AND a.`regionId` = #{regionId}
+        </if>
+        <if test="brandId !=null and brandId !=''">
+            AND a.`brandId` = #{brandId}
+        </if>
+        ORDER BY a.`id` DESC
+    </select>
+    <select id="hotelDetail" resultType="java.util.Map">
+        SELECT
+          a.`id`,
+          a.`name`,
+          a.`title`,
+          (
+           CASE
+           WHEN `grade`=1 THEN '★'
+           WHEN `grade`=2 THEN '★★'
+           WHEN `grade`=3 THEN '★★★'
+           WHEN `grade`=4 THEN '★★★★'
+           WHEN `grade`=5 THEN '★★★★★'
+           ELSE '暂无凭借'END
+          )  AS grade,
+          b.`name` regionName,
+          c.`name` productTypeName,
+          a.`address`,
+          a.`map_x`,
+          a.`map_y`,
+          a.`price`,
+          a.`discount`,
+          a.`tel`,
+          a.`openTime`,
+          a.`bedType`,
+          a.`introduce`,
+          a.`img1`,
+          a.`img2`,
+          a.`img3`,
+          a.`img4`,
+          a.`img5`,
+          a.`hot`,
+          a.`recommend`,
+          a.`sales`,
+          a.`brandId`
+        FROM
+          `guns`.`hotel` a
+          LEFT JOIN `region` b ON a.`regionId`=b.`id`
+          LEFT JOIN `product_type` c ON a.`productTypeId`=c.`id`
+          WHERE a.`id`= #{hotelId}
+        LIMIT 0, 1000 ;
+
+    </select>
+
+
+</mapper>

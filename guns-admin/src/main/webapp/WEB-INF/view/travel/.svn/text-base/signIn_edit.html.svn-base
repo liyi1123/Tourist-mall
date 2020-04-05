@@ -1,0 +1,53 @@
+@layout("/common/_container.html"){
+<link href="${ctxPath}/static/css/plugins/switchery/switchery.css" rel="stylesheet">
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+            <input type="hidden" id="id" value="${item.id}">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#input id="subjectName" name="课目名称" value="${item.subjectName}" underline="true"/>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">状态</label>
+                        <div class="col-sm-9">
+                            <input type="checkbox" class="js-switch" id="status" name="status"
+                                   @if(1== item.status ){
+                                   value="1" checked
+                                   @}else{
+                                   value="0"
+                                   @}
+                                   onchange="SignInInfoDlg.changeStatus(this);"/>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <#input id="desc2" name="备用字段2" value="${item.desc2}" underline="true"/>
+                </div>
+
+                <div class="col-sm-6">
+
+                    <#input id="beginTime" name="开始时间" underline="true" type="text" value="${tool.unixToDate(item.beginTime,null)}" clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+                    <#input id="endTime" name="结束时间" underline="true" type="text" value="${tool.unixToDate(item.endTime,null)}" clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+                    <#input id="citySel" name="班级" underline="true" readonly="readonly" hidden="deptId" value="${deptName}"
+                            clickFun="SignInInfoDlg.showDeptSelectTree(); return false;"
+                            style="background-color: #ffffff !important;"/>
+                </div>
+                <!-- 这是部门选择的下拉框 -->
+                <div id="menuContent" class="menuContent"
+                     style="display: none; position: absolute; z-index: 200;">
+                    <ul id="treeDemo" class="ztree tree-box" style="width: 249px !important;"></ul>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SignInInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SignInInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/js/plugins/switchery/switchery.js"></script>
+<script src="${ctxPath}/static/modular/travel/signIn_info.js"></script>
+@}

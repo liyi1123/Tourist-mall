@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config
+END
+AbstractGeneratorConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/AbstractGeneratorConfig.java
+END
+GunsGeneratorConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/GunsGeneratorConfig.java
+END
+WebGeneratorConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/cz/!svn/ver/123/guns/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/WebGeneratorConfig.java
+END

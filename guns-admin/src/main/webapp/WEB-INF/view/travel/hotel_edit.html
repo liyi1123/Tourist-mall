@@ -1,0 +1,436 @@
+@layout("/common/_container.html"){
+<style>
+    .modal_img{
+        width: 100px;height: 100px;
+    }
+    .modal-lg{
+        width: 1200px;
+    }
+
+</style>
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+            <input type="hidden" id="introduceVal" value='${item.introduce}'>
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="酒店" value="${item.id}" underline="true" readonly="readonly"/>
+                            <#input id="name" name="名称" value="${item.name}" underline="true"/>
+                            <#input id="title" name="标题" value="${item.title}" underline="true"/>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">酒店星级</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control m-b" id="grade">
+                                        @if(isNotEmpty(item.grade)){
+                                        <option value="1"
+                                                @if(item.grade == 1){
+                                                selected
+                                                @}
+                                        >★</option>
+
+                                        <option value="2"
+                                                @if(item.grade == 2){
+                                                selected
+                                                @}
+                                        >★★</option>
+
+                                        <option value="3"
+                                                @if(item.grade == 3){
+                                                selected
+                                                @}
+                                        >★★★</option>
+
+                                        <option value="4"
+                                                @if(item.grade == 4){
+                                                selected
+                                                @}
+                                        >★★★★</option>
+
+                                        <option value="5"
+                                                @if(item.grade == 5){
+                                                selected
+                                                @}
+                                        >★★★★★</option>
+                                        @}
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <#input id="regionName" name="所属区域"  readonly="readonly" hidden="regionId"
+                                    hiddenValue="${item.regionId}" value="${regionName}"
+                                    clickFun="HotelInfoDlg.showDeptSelectTree(); return false;"
+                                    style="background-color: #ffffff !important;" />
+                            <!-- 父级部门的选择框 -->
+                            <div class="hr-line-dashed"></div>
+
+                            <div id="parentDeptMenu" class="menuContent" style="display: none; position: absolute; z-index: 200;">
+                                <ul id="parentDeptMenuTree" class="ztree tree-box" style="width: 388px !important;"></ul>
+                            </div>
+
+                            <#select id="productTypeId" name="酒店类型" underline="true" >
+                                @if(tool.isEmpty(productTypeList)){
+                                    <option value="-1" selected>-- 暂无类型 --</option>
+                                @}else{
+                                    @for(productType in productTypeList){
+                                        <option value="${productType.id}"
+                                            @if(item.productTypeId == productType.id){
+                                                selected
+                                            @}
+                                        >${productType.name}</option>
+                                    @}
+                                @}
+                            </#select>
+                            <#input id="address" name="地址" value="${item.address}" underline="true"/>
+                            <#input id="mapX" name="经度X" value="${item.mapX}" underline="true"/>
+                            <#input id="mapY" name="维度Y" value="${item.mapY}" underline="true"/>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">价格</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">¥</span>
+                                        <input type="text" class="form-control" id="adultTicket" value="${item.price}"/>
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <#input id="discount" name="折扣" value="${item.discount}" underline="true"/>
+                            <#input id="tel" name="电话" value="${item.tel}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="openTime" name="营业时间" underline="true" type="date"
+                                    clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"  value="${item.openTime}"/>
+                            <#input id="bedType" name="床型" value="${item.bedType}" underline="true"/>
+                            <!--<#input id="introduce" name="酒店介绍" value="${item.introduce}" underline="true"/>-->
+                            <!--<#input id="img1" name="图片1" value="${item.img1}" underline="true"/>
+                            <#input id="img2" name="图片2" value="${item.img2}" underline="true"/>
+                            <#input id="img3" name="图片3" value="${item.img3}" underline="true"/>
+                            <#input id="img4" name="图片4" value="${item.img4}" underline="true"/>
+                            <#input id="img5" name="图片5" value="${item.img5}" underline="true"/>-->
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图片1</label>
+                                <div class="col-sm-9 input-group m-b">
+                                    <input class="form-control" id="img1" name="img1" type="text"
+                                           @if(tool.isNotEmpty(item.img1)){
+                                                value="${item.img1}" disabled
+                                           @}
+                                           onclick="HotelInfoDlg.openModal(this);"/>
+                                    <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary"
+                                                            onclick="HotelInfoDlg.clearImage(this);">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </button>
+                                                </span>
+                                </div>
+
+                            </div>
+                            <!--<div class="hr-line-dashed"></div>-->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图片2</label>
+                                <div class="col-sm-9 input-group m-b">
+                                    <input class="form-control" id="img2" name="img2" type="text"
+
+                                           @if(tool.isNotEmpty(item.img2)){
+                                           value="${item.img2}" disabled
+                                           @}
+                                           onclick="HotelInfoDlg.openModal(this);"/>
+
+                                    <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary"
+                                                            onclick="HotelInfoDlg.clearImage(this);">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </button>
+                                                </span>
+                                </div>
+                            </div>
+                            <!--<div class="hr-line-dashed"></div>-->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图片3</label>
+                                <div class="col-sm-9 input-group m-b">
+                                    <input class="form-control" id="img3" name="img3" type="text"
+                                           @if(tool.isNotEmpty(item.img3)){
+                                           value="${item.img3}" disabled
+                                           @}
+                                           onclick="HotelInfoDlg.openModal(this);"/>
+                                    <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary"
+                                                            onclick="HotelInfoDlg.clearImage(this);">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </button>
+                                                </span>
+                                </div>
+                            </div>
+                            <!--<div class="hr-line-dashed"></div>-->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图片4</label>
+                                <div class="col-sm-9 input-group m-b">
+                                    <input class="form-control" id="img4" name="img4" type="text"
+                                           @if(tool.isNotEmpty(item.img4)){
+                                           value="${item.img4}" disabled
+                                           @}
+                                           onclick="HotelInfoDlg.openModal(this);"/>
+                                    <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary"
+                                                            onclick="HotelInfoDlg.clearImage(this);">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </button>
+                                                </span>
+                                </div>
+                            </div>
+                            <!--<div class="hr-line-dashed"></div>-->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图片5</label>
+                                <div class="col-sm-9 input-group m-b">
+                                    <input class="form-control" id="img5" name="img5" type="text"
+
+                                           @if(tool.isNotEmpty(item.img5)){
+                                           value="${item.img5}" disabled
+                                           @}
+                                           onclick="HotelInfoDlg.openModal(this);" />
+
+                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-primary" onclick="HotelInfoDlg.clearImage(this);">
+                                                            <i class="glyphicon glyphicon-remove"></i>
+                                                        </button>
+                                                    </span>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="image" value="" />
+                            <div class="hr-line-dashed"></div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">热点指数</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control m-b" id="hot">
+                                        @if(isNotEmpty(item.grade)){
+                                        <option value="1"
+                                                @if(item.hot==1){
+                                                selected
+                                                @}
+                                        >★</option>
+
+                                        <option value="2"
+                                                @if(item.hot==2){
+                                                selected
+                                                @}
+                                        >★★</option>
+
+                                        <option value="3"
+                                                @if(item.hot==3){
+                                                selected
+                                                @}
+                                        >★★★</option>
+
+                                        <option value="4"
+                                                @if(item.hot==4){
+                                                selected
+                                                @}
+                                        >★★★★</option>
+
+                                        <option value="5"
+                                                @if(item.hot ==5){
+                                                selected
+                                                @}
+                                        >★★★★★</option>
+                                        @}
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">推荐指数</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control m-b" id="recommend">
+                                        @if(isNotEmpty(item.recommend)){
+                                        <option value="1"
+                                                @if(item.recommend==1){
+                                                selected
+                                                @}
+                                        >★</option>
+
+                                        <option value="2"
+                                                @if(item.recommend==2){
+                                                selected
+                                                @}
+                                        >★★</option>
+
+                                        <option value="3"
+                                                @if(item.recommend==3){
+                                                selected
+                                                @}
+                                        >★★★</option>
+
+                                        <option value="4"
+                                                @if(item.recommend==4){
+                                                selected
+                                                @}
+                                        >★★★★</option>
+
+                                        <option value="5"
+                                                @if(item.recommend ==5){
+                                                selected
+                                                @}
+                                        >★★★★★</option>
+                                        @}
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <#input id="sales" name="销量" value="${item.sales}" underline="true"/>
+
+                            <#select id="brandId" name="品牌" underline="true" >
+                                @if(tool.isEmpty(brandList)){
+                                <option value="-1" selected>-- 暂无类型 --</option>
+                                @}else{
+                                @for(brand in brandList){
+                                <option value="${brand.id}"
+                                        @if(item.brandId == brand.id){
+                                        selected
+                                        @}
+                                   >${brand.name}</option>
+                                @}
+                                @}
+                            </#select>
+
+
+                </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="ibox float-e-margins">
+                                        <div class="ibox-title">
+                                            <h5>酒店介绍</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <div class="ibox-content no-padding">
+                                            <div class="summernote" id="introduce"></div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+            </div>
+
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="HotelInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="HotelInfoDlg.close()"/>
+                </div>
+            </div>
+
+            <!-- 模态框声明 -->
+            <div class="modal animated flip" id="coordinateModal" tabindex="-1" style="right: 150px;">
+                <!-- 窗口声明 -->
+                <div class="modal-dialog">
+                    <!-- 内容声明 -->
+                    <div class="modal-content" style="width: 802px;">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                            <h4 class="modal-title">获取坐标</h4>
+                        </div>
+                        <div class="modal-body" style="padding: 0;">
+                            <div id="mapBox" style="width: 800px;height: 500px;"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+
+                <!-- <div class="text-center">
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                         打开示例窗口
+                     </button>
+                 </div>-->
+                <!--模态框的声明-->
+                <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <!--窗口生命-->
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content bounceInRight"><!--animated-->
+                            <!--模态头部-->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">关闭</span>
+                                </button>
+                                <span class="modal-title">请选择插入图片</span>
+                            </div>
+                            <!--模态主体-->
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                            @if(tool.isNotEmpty(imagesList)){
+                                            @for(image in imagesList){
+                                            <div class="col-sm-2 col-xs-6">
+                                                <div class="radio i-checks">
+                                                    <label>
+                                                        <input type="radio" value="${image.name}" name="radio_a" data-id="${image.id}"/> <i></i>
+                                                        <img class="modal_img" alt="image" src="${ctxPath}/kaptcha/${image.name}" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @}
+                                            @}else{
+                                            <div class="jumbotron text-center">
+                                                <h3>您暂未图片资源可用!</h3>
+                                            </div>
+                                            @}
+                                    </div>
+                                </div>
+                            </div>
+                            <!--模态底部-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                @if(tool.isNotEmpty(imagesList)){
+                                <button type="button" class="btn btn-primary" onclick="HotelInfoDlg.setImage();">插入</button>
+                                @}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+ <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y9M7Vw9GIx9q2yAophK72OG5YV1DtOWp"></script>
+ <script src="${ctxPath}/static/js/plugins/summernote/summernote.min.js"></script>
+ <script src="${ctxPath}/static/js/plugins/summernote/summernote-zh-CN.js"></script>
+ <script src="${ctxPath}/static/modular/travel/hotel_info.js"></script>
+ <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script>
+
+
+</script>
+@}

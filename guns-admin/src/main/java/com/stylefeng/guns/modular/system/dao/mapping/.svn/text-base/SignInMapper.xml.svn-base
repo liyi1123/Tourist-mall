@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SignInMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SignIn">
+        <id column="id" property="id" />
+        <result column="parentId" property="parentId" />
+        <result column="subjectName" property="subjectName" />
+        <result column="studentId" property="studentId" />
+        <result column="teacherId" property="teacherId" />
+        <result column="beginTime" property="beginTime" />
+        <result column="endTime" property="endTime" />
+        <result column="status" property="status" />
+        <result column="deptId" property="deptId" />
+        <result column="desc2" property="desc2" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, parentId, subjectName, studentId, teacherId, beginTime, endTime, status, desc1, desc2
+    </sql>
+
+
+    <select id="querySignInList" resultType="java.util.Map">
+        SELECT
+          a.`id`,
+          a.`parentId`,
+          a.`subjectName`,
+          a.`studentId`,
+          b.`name` teacherName,
+          FROM_UNIXTIME(a.`beginTime`) beginTime,
+          FROM_UNIXTIME(a.`endTime`) endTime,
+          a.`status`,
+          c.simplename deptName
+          FROM `guns`.`sign_in` a LEFT JOIN `sys_user` b ON a.`teacherId`=b.`id` LEFT JOIN `sys_dept` c ON a.deptId=c.id
+          WHERE a.`parentId`=0
+           <if test="subjectName != null and subjectName != ''" >
+               AND a.`subjectName` LIKE CONCAT('%',#{subjectName},'%')
+           </if>
+           ORDER BY a.id DESC
+    </select>
+
+
+    <select id="stuSignInList" resultType="java.util.Map">
+        SELECT
+          a.`id`,
+          a.`subjectName`,
+          b.`name` teacherName,
+          FROM_UNIXTIME(a.`beginTime`),
+          FROM_UNIXTIME(a.`endTime`),
+          a.`status`,
+          c.`simplename` deptName
+        FROM
+          `sign_in` a
+          LEFT JOIN `sys_user` b
+            ON a.`teacherId` = b.`id`
+          LEFT JOIN `sys_dept` c
+            ON a.`deptId` = c.`id`
+        WHERE a.`deptId` = #{deptId}
+          AND a.`parentId` = 0 ORDER BY a.`id` DESC
+    </select>
+
+
+</mapper>

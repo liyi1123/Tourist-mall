@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Travel - 主页</title>
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="css/init.css" rel="stylesheet">
+    <link href="js/plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/travelStyle.css" rel="stylesheet">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y9M7Vw9GIx9q2yAophK72OG5YV1DtOWp"></script>
+
+</head>
+<style>
+    .a1{
+        border: 1px dashed red;
+    }
+</style>
+<body>
+<div class="allPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 search">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <a href="t_index.html" class="thumbnail">
+                                <img src="img/logo.png" alt="LOGO">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="搜索旅游/酒店/景点" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" >
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 login" >
+                <div class="container-fluid" style="padding: 0 0;">
+                    <div class="row">
+                        <div class="">
+
+                            <a href="t_index.html" class="roll-right">
+                                <span class="nav-label">退出</span>
+                                <i class="fa fa-sign-out"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--导航 begin-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand logo visible-xs">
+                <img src="img/logo.png" alt="旅游实训网" />
+            </a>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                <li><a href="information.html"><span class="glyphicon glyphicon-list"></span> 周边旅游</a></li>
+                <li><a href="case.html"><span class="glyphicon glyphicon-fire"></span> 国内旅游</a></li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-plane"></span> 出境旅游</a></li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-bed"></span> 酒店</a></li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-tent"></span> 景点</a></li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-globe"></span> 签证</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 导航 end -->
+<!--景点List Begin-->
+<div class="scenic-spot-detail">
+    <div class="container">
+        <!--路径导航(面包屑)-->
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="">首页</a></li>
+                <li><a href="">景点</a></li>
+                <li><a href="">景点详情</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/酒店 1.jpg" alt="第一张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>蓝色与灰色</h3>
+                                <p>山与远处的天空</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/酒店 2.jpg" alt="第二张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>俄罗斯火车雪景</h3>
+                                <p>俄罗斯火车雪景</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/酒店 5.jpg" alt="第三张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>山与油菜花海</h3>
+                                <p>山与油菜花海</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/酒店 4.jpg" alt="第四张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>带你去远方</h3>
+                                <p>诗和远方</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#myCarousel" data-slide="next" class="carousel-control right">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <!--景点名称-->
+                <h2>香港迪士尼（Disney）5日自由行·【国庆亲子游】2晚香港迪士尼主题酒店+2晚市区酒店</h2>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>类型: <span class="label label-success">特卖汇</span> </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>所属区域: <span class="label label-success">北京</span></h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>星级: <span class="hotel_stars03"></span> </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>所属区域: <span class="label label-success">北京</span></h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-4 form-group">
+                        <label>成人:</label>
+                        <select class="form-control">
+                            <option>0</option>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>>6</option>
+                        </select>
+
+                    </div>
+                    <div class="col-xs-4">
+                        <label>儿童:</label>
+                        <select class="form-control">
+                            <option>0</option>
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>>6</option>
+                        </select>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <label>军人/特殊人群:</label>
+                        <select class="form-control">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>>6</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group text-center">
+                        <div class="col-xs-6">
+                            <a href="javascript:;" class="btn btn-primary btn-lg">立即购买</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="javascript:;" class="btn btn-success btn-lg">加入购物车</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End-->
+        <!--地图位置 Begin-->
+        <div class="row map_div">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">所在位置</div>
+                </div>
+                <div class="panel-body img-responsive">
+                    <div id="scenic_spot_map"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--地图位置 End-->
+        <!--景点介绍 Begin-->
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">景点介绍</div>
+                </div>
+                <div class="panel-body">
+
+                    <h1 style="text-align: center;"><font style="background-color: rgb(238, 236, 224);"><font
+                            color="#4d80bf">西安弛卓电子科技有限公司</font><font color="#46acc8">&#8203;</font></font></h1>
+
+                </div>
+            </div>
+        </div>
+        <!--景点介绍 End-->
+
+        <!--服务承诺 Begin-->
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        服务承诺
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h1 style="text-align: center;"><font style="background-color: rgb(238, 236, 224);"><font
+                            color="#4d80bf">服务承诺</font><font color="#46acc8">&#8203;</font></font></h1>
+                </div>
+            </div>
+        </div>
+
+
+        <!--服务承诺 Begin-->
+    </div>
+</div>
+
+
+
+
+
+<!--底部 begin-->
+<footer id="footer">
+    <div class="container">
+        <p>旅游实训 | 教学实验 | 软件定制</p>
+        <p>版权所有 © 2015-2020 西安弛卓电子科技有限公司</p>
+    </div>
+</footer>
+<!--底部 End-->
+</div>
+
+</body>
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.5"></script>
+<script src="js/plugins/layui/layui.js"></script>
+<script>
+    layui.use(['laypage','layer'], function (){
+        var laypage = layui.laypage, layer = layui.layer;
+        laypage.render({
+            elem: 'demo7',
+            count: 100,
+            layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+            jump: function (obj){
+                //console.log(obj);
+            }
+        });
+    });
+/*-- 地图位置显示-- */
+    var map = new BMap.Map("scenic_spot_map");
+    var point = new BMap.Point(108.953138,34.268618);
+    map.centerAndZoom(point, 12);
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.MapTypeControl());
+    //是否启用鼠标滚轴操作
+    //map.enableScrollWheelZoom(true);
+    /* 标记的事件 */
+    marker.addEventListener("click", function(){
+        alert("您点击了标注");
+    });
+    marker.enableDragging();
+    marker.addEventListener("dragend", function(e){
+        $('#mapX').val(e.point.lng);
+        $('#mapY').val(e.point.lat);
+    });
+</script>
+</html>

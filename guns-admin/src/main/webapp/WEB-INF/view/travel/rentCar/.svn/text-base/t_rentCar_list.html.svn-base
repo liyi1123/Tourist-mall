@@ -1,0 +1,167 @@
+
+<div class="allPage">
+<!-- 导航 end -->
+<!--景点List Begin-->
+<div class="scenic-body">
+    <div class="container">
+        <!--路径导航(面包屑)-->
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="">首页</a></li>
+                <li><a href="">租车</a></li>
+            </ul>
+        </div>
+<div class="row">
+    <p class="mid_tit">
+        <span class="line"></span>
+        <em>热门 · <span class="blue">国内租车城市</span></em>
+    </p>
+    <div class="internalMap center-block hidden-xs">
+        <a href="#" target="_blank" class="ci_icon more wlmq" title="乌鲁木齐租车">乌鲁<br>木齐</a>
+        <a href="#" target="_blank" class="ci_icon cd" title="成都租车">成都</a>
+        <a href="#" target="_blank" class="ci_icon km" title="昆明租车">昆明</a>
+        <a href="#" target="_blank" class="ci_icon xa" title="西安租车">西安</a>
+        <a href="#" target="_blank" class="ci_icon taiyuan" title="太原租车">太原</a>
+        <a href="#" target="_blank" class="ci_icon lanzhou" title="兰州租车">兰州</a>
+        <a href="#" target="_blank" class="ci_icon xining" title="西宁租车">西宁</a>
+        <a href="#" target="_blank" class="ci_icon wh" title="武汉租车">武汉</a>
+        <a href="#" target="_blank" class="ci_icon cs" title="长沙租车">长沙</a>
+        <a href="#" target="_blank" class="ci_icon sz" title="深圳租车">深圳</a>
+        <a href="#" target="_blank" class="ci_icon sy" title="三亚租车">三亚</a>
+        <a href="#" target="_blank" class="ci_icon bj" title="北京租车">北京</a>
+        <a href="#" target="_blank" class="ci_icon dl" title="大连租车">大连</a>
+        <a href="#" target="_blank" class="ci_icon changchun" title="长春租车">长春</a>
+        <a href="#" target="_blank" class="ci_icon qd" title="青岛租车">青岛</a>
+        <a href="#" target="_blank" class="ci_icon nj" title="南京租车">南京</a>
+        <a href="#" target="_blank" class="ci_icon sh" title="上海租车">上海</a>
+        <a href="#" target="_blank" class="ci_icon hz" title="杭州租车">杭州</a>
+        <a href="#" target="_blank" class="ci_icon heb" title="哈尔滨租车">哈尔滨</a>
+        <a href="#" target="_blank" class="ci_icon tb" title="台北租车">台北</a>
+        <a href="#" target="_blank" class="ci_icon xg" title="香港租车">香港</a>
+        <a href="#" target="_blank" class="ci_icon lasa" title="拉萨租车">拉萨</a>
+    </div>
+
+    <div class="internalPlace fl visible-xs-block">
+        <a href="#" target="_blank"  title="海口租车"><em class="ci_icon"></em><span>海口</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="天津租车"><em class="ci_icon"></em><span>天津</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="苏州租车"><em class="ci_icon"></em><span>苏州</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="宁波租车"><em class="ci_icon"></em><span>宁波</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="珠海租车"><em class="ci_icon"></em><span>珠海</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="广州租车"><em class="ci_icon"></em><span>广州</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="福州租车"><em class="ci_icon"></em><span>福州</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="大理租车"><em class="ci_icon"></em><span>大理</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="沈阳租车"><em class="ci_icon"></em><span>沈阳</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="西双版纳租车"><em class="ci_icon"></em><span>西双版纳</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank"  title="丽江租车"><em class="ci_icon"></em><span>丽江</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="太原租车"><em class="ci_icon"></em><span>太原</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="长春租车"><em class="ci_icon"></em><span>长春</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="石家庄租车"><em class="ci_icon"></em><span>石家庄</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="合肥租车"><em class="ci_icon"></em><span>合肥</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="贵阳租车"><em class="ci_icon"></em><span>贵阳</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="无锡租车"><em class="ci_icon"></em><span>无锡</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="南宁租车"><em class="ci_icon"></em><span>南宁</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="济南租车"><em class="ci_icon"></em><span>济南</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="西宁租车"><em class="ci_icon"></em><span>西宁</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank"  title="洛阳租车"><em class="ci_icon"></em><span>洛阳</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="九寨沟租车"><em class="ci_icon"></em><span>九寨沟</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="温州租车"><em class="ci_icon"></em><span>温州</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="东莞租车"><em class="ci_icon"></em><span>东莞</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="桂林租车"><em class="ci_icon"></em><span>桂林</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="厦门租车"><em class="ci_icon"></em><span>厦门</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="兰州租车"><em class="ci_icon"></em><span>兰州</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="南昌租车"><em class="ci_icon"></em><span>南昌</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="重庆租车"><em class="ci_icon"></em><span>重庆</span><i class="ci_icon"></i></a>
+        <a href="#" target="_blank" title="更多租车"><em class="ci_icon" style="background-position: -36px -261px;"></em><span style="border-color: #06c; color: #06c;">更多...</span><i class="ci_icon" style="background-position: -54px -261px;"></i></a>
+    </div>
+</div>
+
+        <div class="row">
+            <div class="row">
+                <!--热门城市-->
+                <div class="col-sm-4">
+                    <div class="container-fluid">
+                        <form action="">
+                            <small class="text-navy">租车类型</small>
+                            <div class="form-group">
+                                <div class="checkbox i-checks">
+                                    @if(isNotEmpty(productTypeList)){
+                                        @for(productType in productTypeList){
+                                            <label><input type="radio" name="productTypeName" value="">${productType.name}</label>
+                                        @}
+                                    @}
+                                </div>
+                            </div>
+
+                            <small class="text-navy">车辆品牌</small>
+                            <div class="form-group">
+                                <div class="checkbox i-checks">
+                                    @if(isNotEmpty(carBrandList)){
+                                        @for(carBrand in carBrandList){
+                                            <label><input type="radio" name="carBrand" value="">${carBrand.name}</label>
+                                        @}
+                                    @}
+                                </div>
+                            </div>
+
+                            <small class="text-navy">座位数</small>
+                            <div class="form-group">
+                                <div class="checkbox i-checks">
+                                    <label><input type="radio" name="carBrand" value=""><i class="dayudengyu"></i>2人</label>
+                                    <label><input type="radio" name="carBrand" value=""><span class="dayudengyu"></span>5人</label>
+                                    <label><input type="radio" name="carBrand" value=""><span class="dayudengyu"></span>7人</label>
+                                    <label><input type="radio" name="carBrand" value=""><span class="dayudengyu"></span>32人</label>
+                                    <label><input type="radio" name="carBrand" value=""><span class="dayudengyu"></span>42人</label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-8">
+                    <!--items-->
+                    <div class="row scenic-item">
+                        <div class="col-sm-4">
+                            <a href="#" class="thumbnail">
+                                <img src="${ctxPath}/static/img/500_280_1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row  scenic-title">
+                                <a href=""><h4>主标题被青山绿水环绕的徽派园林酒店，去三清山观云海赏奇石</h4></a>
+                            </div>
+                            <div class="row scenic-item-subheading">
+                                <em>副标题副标题副标题副标题</em>
+                            </div>
+                            <div class="row">
+                                <span class="hotel_stars02  "></span>
+                            </div>
+                            <!--价格-->
+                            <div class="row">
+                                <div class="col-sm-4 col-sm-offset-7 prices">
+                                <span>
+                                    <dfn>¥</dfn>
+                                    1099
+                                    <em>起/人</em>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--items End-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- layui 分页-->
+        <div class="row">
+            <div id="demo7"></div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+

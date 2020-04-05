@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.VisaNationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.VisaNation">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="parentId" property="parentId" />
+        <result column="comment" property="comment" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, parentId, comment
+    </sql>
+
+    <select id="tree" resultType="com.stylefeng.guns.core.node.ZTreeNode">
+    SELECT
+    `id`,
+    `name`,
+    `parentId` AS pId,
+    `comment`,
+    (CASE WHEN (parentId = 0 OR parentId IS NULL) THEN 'true' ELSE 'false' END) AS isOpen
+    FROM `visa_nation`
+    </select>
+    <select id="list" resultType="com.stylefeng.guns.modular.system.model.VisaNation">
+        SELECT
+              a.`id`,
+              a.`name`,
+              a.`parentId`,
+              a.`comment`,
+              a.`img1`
+            FROM
+              `guns`.`visa_nation` As a WHERE a.`parentId` =#{condition}
+            LIMIT 0, 8 ;
+
+
+    </select>
+
+
+</mapper>
+

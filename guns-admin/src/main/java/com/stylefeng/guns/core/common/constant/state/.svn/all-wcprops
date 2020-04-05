@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state
+END
+ManagerStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/ManagerStatus.java
+END
+LogSucceed.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/LogSucceed.java
+END
+LogType.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/LogType.java
+END
+Order.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/Order.java
+END
+BizLogType.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/BizLogType.java
+END
+MenuOpenStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/MenuOpenStatus.java
+END
+ExpenseState.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/ExpenseState.java
+END
+IsMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/IsMenu.java
+END
+MenuStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/MenuStatus.java
+END

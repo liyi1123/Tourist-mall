@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap
+END
+RoleDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/RoleDict.java
+END
+DeptDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DeptDict.java
+END
+LogDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/LogDict.java
+END
+DictMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DictMap.java
+END
+MenuDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/MenuDict.java
+END
+NoticeMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/NoticeMap.java
+END
+DeleteDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DeleteDict.java
+END
+UserDict.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/UserDict.java
+END

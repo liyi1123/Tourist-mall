@@ -1,0 +1,340 @@
+
+<!-- 轮播图 begin -->
+<div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        @for(img in imgList){
+            <li data-target="#myCarousel" data-slide-to="${imgLP.index-1}"
+            @if(imgLP.index == 1){
+                class="active"
+            @}
+            ></li>
+        @}
+    </ol>
+    <div class="carousel-inner">
+            @for(img in imgList){
+            <div class="item
+            @if(imgLP.index == 1){
+                active
+            @}
+            ">
+                <img src="${ctxPath}/static/img/${img.name}" alt="第 ${imgLP.index} 张">
+                <div class="carousel-caption">
+                    <h3>${imgLP.index}</h3>
+                    <p>集合大小为: ${img.~size}</p>
+                </div>
+            </div>
+            @}
+    </div>
+    <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#myCarousel" data-slide="next" class="carousel-control right">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<!-- 轮播图 end -->
+
+<!--景点栏 begin-->
+<div class="container" id="scenic_spot_div">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            @if(isNotEmpty(productTypeList)){
+                @for(productType in productTypeList){
+                  <li
+                  @if(productTypeLP.index == 1){
+                     class = "active"
+                  @}
+                  ><a href="#productTypeId_${productType.id}" data-toggle="tab">${productType.name}</a></li>
+                @}
+            @}else{
+                  <li><a href="javascript:;" data-toggle="tab">没有类型    </a> </li>
+            @}
+
+        </ul>
+        <a href="${ctxPath}/travel/scenicSpotList/1/10/0/0">更多</a>
+        <div class="tab-content">
+<!-- 产品类型的遍历 -->
+
+        @if(isNotEmpty(productTypeList)){
+            @for(productType in productTypeList){
+                <div class="tab-pane
+                @if(productTypeLP.index == 1){
+                    active
+                @}
+                " id="productTypeId_${productType.id}" data-index="${productTypeLP.index}">
+                    <div class="row">
+                        @if(isNotEmpty(scenicList)){
+
+                            @for(scenicArray in scenicList){
+                               @if(isNotEmpty(scenicArray)){
+                                   @for(scenicSpot in scenicArray){
+                                       @if(isNotEmpty(scenicSpot)){
+                                            @if(productType.id == scenicSpot.productTypeId){
+                                                <div class="col-sm-3 col-xs-6">
+                                                    <a href="${ctxPath}/travel/getScenicSpotDetail/${scenicSpot.id}" style="text-decoration: none;">
+                                                        <div class="thumbnail">
+                                                            <img src="${ctxPath}/static/img/${scenicSpot.img1}" alt="">
+                                                            <div class="">
+                                                                <h3>
+                                                                    <a class="" href="${ctxPath}/travel/getScenicSpotDetail/${scenicSpot.id}">${scenicSpot.name}</a></h3>
+                                                                <p>席位充足</p>
+                                                                <span>${scenicSpot.adultTicket}</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            @}
+                                       @}
+                                    @}
+
+                               @}
+
+                            @}
+
+                        @}
+
+                    </div>
+                </div>
+            @}
+
+        @}
+
+
+        </div>
+    </div>
+</div>
+<!--景点栏 end-->
+
+<!--酒店栏 begin-->
+<div class="bg-eee">
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                @if(isNotEmpty(hotelTypeList)){
+                     @for(hotelType in hotelTypeList){
+                          <li
+                          @if(hotelTypeLP.index == 1){
+                             class = "active"
+                          @}
+                          ><a href="#hotelType_${hotelType.id}" data-toggle="tab">${hotelType.name}</a> </li>
+                     @}
+
+                @}
+
+            </ul>
+
+            <a href="${ctxPath}/travelHotel/hotelList/1/10/0/0/0/0">更多</a>
+            
+            <div class="tab-content">
+                @if(isNotEmpty(hotelTypeList)){
+                    @for(hotelType in hotelTypeList){
+                        <div class="tab-pane
+                            @if(hotelTypeLP.index == 1){
+                                active
+                            @}
+                        " id="hotelType_${hotelType.id}"  data-index="${hotelTypeLP.index}">
+                                @if(isNotEmpty(hotelData)){
+                                    @for(hotelArray in hotelData){
+                                        @if(isNotEmpty(hotelArray)){
+                                            <div class="row">
+                                                @for(hotel in hotelArray){
+                                                    @if(hotelType.id == hotel.productTypeId){
+                                                        <div class="col-sm-3 col-xs-6">
+                                                            <div class="thumbnail">
+                                                                <img src="${ctxPath}/static/img/${hotel.img1}" alt="">
+                                                                <div class="">
+                                                                    <h3>${hotel.name}</h3>
+                                                                    <p>席位充足</p>
+                                                                    <span>${hotel.price}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @}
+
+                                                @}
+                                            </div>
+                                        @}
+                                    @}
+                                @}
+
+                        </div>
+                    @}
+
+                @}
+            </div>
+        </div>
+    </div>
+</div>
+<!--酒店栏 end-->
+
+<!--租车栏 begin-->
+<div id="rent-car">
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                @if(isNotEmpty(rentCarTypeList)){
+                     @for(rentCarType in rentCarTypeList){
+                         <li
+                             @if(rentCarTypeLP.index == 1){
+                                class="active"
+                             @}
+                             ><a href="#rentCarType_${rentCarType.id}" data-toggle="tab">${rentCarType.name}</a></li>
+                     @}
+                @}
+            </ul>
+
+            <a href="${ctxPath}/travelRent/1/10/0/0/0">更多</a>
+
+<!-- 租车类型 -->
+            <div class="col-sm-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        租车区域
+                    </div>
+                    <div class="panel-body">
+                        @if(isNotEmpty(visaNationList)){
+                             @for(visaNation in visaNationList){
+                                 <span class="btn btn-info btn-sm">${visaNation.name}</span>
+                             @}
+                        @}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="tab-content">
+                        @if(isNotEmpty(rentCarTypeList)){
+                            @for(rentCarType in rentCarTypeList){
+                                <div class="tab-pane
+                                @if(rentCarTypeLP.index == 1){
+                                    active
+                                @}
+                                " id="rentCarType_${rentCarType.id}" data-index="${rentCarTypeLP.index}">
+                                @if(isNotEmpty(carData)){
+                                     @for(carList in carData){
+                                         @if(isNotEmpty(carList)){
+                                             @for(car in carList){
+                                                @if(car.productTypeId == rentCarType.id){
+                                                    <div class="col-sm-3 col-xs-6">
+                                                        <div class="thumbnail">
+                                                            <img src="${ctxPath}/static/img/${car.img1}" alt="">
+                                                            <div class="">
+                                                                <h3>${car.name}</h3>
+                                                                <p>席位充足</p>
+                                                                <span>${car.gearBox}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @}
+                                             @}
+                                         @}
+                                     @}
+                                 @}
+                                </div>
+                            @}
+                        @}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--租车栏 end-->
+
+
+<!--签证栏 begin-->
+<div class="visa">
+    <div class="container">
+        <div class="row">
+            <!--标签页-->
+            <ul class="nav nav-tabs">
+                @if(isNotEmpty(continentTypeList)){
+                    @for(continentType in continentTypeList){
+                        <li
+                            @if( continentTypeLP.index == 1){
+                               class="active"
+                            @}
+                            ><a href="#continentType_${continentType.id}" data-toggle="tab">${continentType.name}</a></li>
+                    @}
+                @}else{
+                    <span class="btn btn-info btn-sm">无类型</span>
+                @}
+            </ul>
+
+            <!--具体子页-->
+            <div class="tab-content">
+                <div class="tab-pane active">
+                    <div class="row">
+                        <div class="col-sm-3 visa-state">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        签证国家
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    @if(isNotEmpty(visaNationList)){
+                                       @for(visaNation in visaNationList){
+                                            <span class="btn btn-info btn-sm">${visaNation.name}</span>
+                                       @}
+                                    @}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 visa-item">
+                            <div class="row">
+                                        <div class="tab-content">
+                                            @if(isNotEmpty(continentTypeList)){
+                                                @for(continentType in continentTypeList){
+                                                    <div class="tab-pane
+                                                        @if(continentTypeLP.index == 1){
+                                                            active
+                                                        @}
+                                                        " id="continentType_${continentType.id}" data-index="${continentTypeLP.index}">
+                                                            @if(isNotEmpty(visaNationData)){
+                                                                @for(visaData in visaNationData){
+                                                                    @if(isNotEmpty(visaData)){
+                                                                        @for(visa in visaData){
+                                                                            @if(visa.parentId == continentType.id ){
+                                                                                <div class="col-sm-3 col-xs-6">
+                                                                                    <div class="thumbnail">
+                                                                                        <a class="" href="https://www.baidu.com">
+                                                                                            <img src="${ctxPath}/static/img/${visa.img1}" alt="">
+                                                                                        </a>
+                                                                                            <div class="">
+                                                                                                <h3>
+                                                                                                    <a class="" href="${ctxPath}/aaa/?visaNationId=9">${visa.name}</a>
+                                                                                                </h3>
+                                                                                                <p>席位充足</p>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @}
+                                                                        @}
+                                                                    @}
+                                                                @}
+                                                            @}
+                                                    </div>
+                                                @}
+                                            @}
+                                        </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--签证栏 end-->
+
+
+
+
+

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user
+END
+user_roleassign.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_roleassign.html
+END
+user_view.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_view.html
+END
+user_chpwd.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_chpwd.html
+END
+user_importTemplate.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_importTemplate.html
+END
+user_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_edit.html
+END
+user_add.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_add.html
+END
+user.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/user/user.html
+END

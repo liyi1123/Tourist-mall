@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/config/properties
+END
+JwtProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java
+END
+RestProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/travel/hotel
+END
+t_hotel_detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/travel/hotel/t_hotel_detail.html
+END
+t_hotel_list.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/travel/hotel/t_hotel_list.html
+END
+t_hotel_booking.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/travel/hotel/t_hotel_booking.html
+END

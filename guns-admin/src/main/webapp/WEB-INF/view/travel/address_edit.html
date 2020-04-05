@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="买家收货地址表" value="${item.id}" underline="true"/>
+                            <#input id="sysUserId" name="sys_user的ID" value="${item.sysUserId}" underline="true"/>
+                            <#input id="userName" name="收货人姓名" value="${item.userName}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="phone" name="电话" value="${item.phone}" underline="true"/>
+                            <#input id="addressInfo" name="地址信息" value="${item.addressInfo}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="AddressInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="AddressInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ <script src="${ctxPath}/static/modular/travel/address_info.js"></script>
+@}

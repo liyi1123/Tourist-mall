@@ -1,0 +1,34 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="ID" value="${item.id}" underline="true"/>
+                            <#input id="prefix" name="前缀" value="${item.prefix}" underline="true"/>
+                            <#input id="name" name="图片名称" value="${item.name}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="sysUserId" name="上传用户的ID" value="${item.sysUserId}" underline="true"/>
+                            <#input id="status" name="-1:删除;1存在" value="${item.status}" underline="true"/>
+                            <#input id="desc" name="保留字段" value="${item.desc}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ImagesInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ImagesInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ <script src="${ctxPath}/static/modular/travel/images_info.js"></script>
+@}

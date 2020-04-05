@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper
+END
+DeptWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/DeptWarpper.java
+END
+DictWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/DictWarpper.java
+END
+RoleWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/RoleWarpper.java
+END
+NoticeWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/NoticeWrapper.java
+END
+UserWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/UserWarpper.java
+END
+MenuWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/MenuWarpper.java
+END
+LogWarpper.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/LogWarpper.java
+END

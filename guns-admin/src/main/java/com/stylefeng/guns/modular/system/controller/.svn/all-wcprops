@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller
+END
+LogController.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LogController.java
+END
+KaptchaController.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/KaptchaController.java
+END
+MenuController.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/MenuController.java
+END
+UserMgrController.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/UserMgrController.java
+END
+LoginLogController.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LoginLogController.java
+END
+LoginController.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LoginController.java
+END
+NoticeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/NoticeController.java
+END
+BlackboardController.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/BlackboardController.java
+END
+DictController.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/DictController.java
+END
+RoleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/RoleController.java
+END
+DeptController.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/DeptController.java
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/converter
+END
+BaseTransferEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java
+END
+WithSignMessageConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java
+END

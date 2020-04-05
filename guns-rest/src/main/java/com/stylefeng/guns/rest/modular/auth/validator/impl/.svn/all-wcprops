@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl
+END
+SimpleValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java
+END
+DbValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cz/!svn/ver/123/guns/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.java
+END

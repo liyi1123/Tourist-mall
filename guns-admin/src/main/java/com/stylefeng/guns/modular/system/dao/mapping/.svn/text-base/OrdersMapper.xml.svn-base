@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.OrdersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Orders">
+        <id column="id" property="id" />
+        <result column="parentId" property="parentId" />
+        <result column="orderType" property="orderType" />
+        <result column="productId" property="productId" />
+        <result column="buyerId" property="buyerId" />
+        <result column="addressId" property="addressId" />
+        <result column="orderNum" property="orderNum" />
+        <result column="number" property="number" />
+        <result column="lastTime" property="lastTime" />
+        <result column="checkInTime" property="checkInTime" />
+        <result column="checkOutTime" property="checkOutTime" />
+        <result column="totalMoney" property="totalMoney" />
+        <result column="usingIntegral" property="usingIntegral" />
+        <result column="desc" property="desc" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, parentId, orderType, productId, buyerId, addressId, orderNum, number, lastTime, checkInTime, checkOutTime, totalMoney, usingIntegral, desc
+    </sql>
+
+</mapper>

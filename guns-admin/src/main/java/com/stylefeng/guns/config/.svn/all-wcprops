@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config
+END
+MybatisPlusConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config/MybatisPlusConfig.java
+END
+SwaggerConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config/SwaggerConfig.java
+END
+SpringSessionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config/SpringSessionConfig.java
+END
+FlowableConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config/FlowableConfig.java
+END
+EhCacheConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/java/com/stylefeng/guns/config/EhCacheConfig.java
+END

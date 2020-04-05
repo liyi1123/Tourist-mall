@@ -1,0 +1,217 @@
+
+<body>
+<div class="allPage">
+
+<!--景点List Begin-->
+<div class="scenic-spot-detail">
+    <div class="container">
+        <!--路径导航(面包屑)-->
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="">首页</a></li>
+                <li><a href="">酒店</a></li>
+                <li><a href="">酒店详情</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        @if(isNotEmpty(hotelDetailOrder)){
+                        <div class="item active">
+                            <img src="${ctxPath}/static/img/${hotelDetailOrder.img1}" alt="第一张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>蓝色与灰色</h3>
+                                <p>山与远处的天空</p>
+                            </div>
+                        </div>
+                        @}
+                        @if(isNotEmpty(hotelDetailOrder)){
+                        <div class="item ">
+                            <img src="${ctxPath}/static/img/${hotelDetailOrder.img2}" alt="第二张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>俄罗斯火车雪景</h3>
+                                <p>俄罗斯火车雪景</p>
+                            </div>
+                        </div>
+                        @}
+                        @if(isNotEmpty(hotelDetailOrder)){
+                        <div class="item ">
+                            <img src="${ctxPath}/static/img/${hotelDetailOrder.img3}" alt="第三张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>山与油菜花海</h3>
+                                <p>山与油菜花海</p>
+                            </div>
+                        </div>
+                        @}
+                        @if(isNotEmpty(hotelDetailOrder)){
+                        <div class="item ">
+                            <img src="${ctxPath}/static/img/${hotelDetailOrder.img4}" alt="第四张" class="img-responsive center-block">
+                            <div class="carousel-caption">
+                                <h3>带你去远方</h3>
+                                <p>诗和远方</p>
+                            </div>
+                        </div>
+                        @}
+                    </div>
+                    <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#myCarousel" data-slide="next" class="carousel-control right">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <!--景点名称-->
+                <h2>${hotelDetailOrder.name}</h2>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>类型: <span class="label label-success">${hotelDetailOrder.productTypeName}</span> </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>所属区域: <span class="label label-success">${hotelDetailOrder.regionName}</span></h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>星级: <span class=" ">${hotelDetailOrder.grade}</span> </h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-4 form-group">
+                        <label>成人:</label>
+                        <select class="form-control">
+                            <option>0</option>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>>6</option>
+                        </select>
+
+                    </div>
+                    <div class="col-xs-4">
+                        <label>儿童:</label>
+                        <select class="form-control">
+                            <option>0</option>
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>>6</option>
+                        </select>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <label>军人/特殊人群:</label>
+                        <select class="form-control">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>>6</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group text-center">
+                        <div class="col-xs-6">
+                            <a href="javascript:;" class="btn btn-primary btn-lg">立即预约</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="javascript:;" class="btn btn-success btn-lg">加入购物车</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End-->
+        <div class="row map_div">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        选择时间
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" id="data_5">
+                            <label class="font-noraml">范围选择</label>
+                            <div class="input-daterange input-group" id="datepicker">
+                                <span class="input-group-addon">入住时间</span>
+                                <input type="text" class="input-sm form-control" name="start" value="2018-10-18" />
+                                <span class="input-group-addon">离店时间</span>
+                                <input type="text" class="input-sm form-control" name="end" value="2018-10-20" />
+                            </div>
+                            <a href="javascript:;" class="btn btn-info pull-right hidden" onclick="unlock(this);">取消</a>
+                            <a href="javascript:;" class="btn btn-info pull-right" onclick="lockInput(this);">确定</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--地图位置 Begin-->
+        <div class="row map_div">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">所在位置</div>
+                </div>
+                <div class="panel-body img-responsive">
+                    <div id="hotel_detail_map"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--地图位置 End-->
+        <!--景点介绍 Begin-->
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">景点介绍</div>
+                </div>
+                <div class="panel-body">
+
+                    <h1 style="text-align: center;"><font style="background-color: rgb(238, 236, 224);"><font
+                            color="#4d80bf">西安弛卓电子科技有限公司</font><font color="#46acc8">&#8203;</font></font></h1>
+
+                </div>
+            </div>
+        </div>
+        <!--景点介绍 End-->
+
+        <!--服务承诺 Begin-->
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        服务承诺
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h1 style="text-align: center;"><font style="background-color: rgb(238, 236, 224);"><font
+                            color="#4d80bf">服务承诺</font><font color="#46acc8">&#8203;</font></font></h1>
+                </div>
+            </div>
+        </div>
+
+
+        <!--服务承诺 Begin-->
+    </div>
+</div>
+</div>

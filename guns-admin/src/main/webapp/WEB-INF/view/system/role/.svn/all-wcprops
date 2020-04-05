@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/role
+END
+role_add.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_add.html
+END
+role_assign.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_assign.html
+END
+role.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/role/role.html
+END
+role_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cz/!svn/ver/123/guns/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_edit.html
+END
